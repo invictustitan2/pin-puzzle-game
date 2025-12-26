@@ -16,25 +16,25 @@ This checklist determines whether the Pin Puzzle Game core gameplay has been suf
 
 - [ ] **PASS** / [ ] FAIL: 90%+ of testers completed levels 1-3 without assistance
 - Actual completion rate: **\_\_**%
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 ### 1.2 Core Enjoyment
 
 - [ ] **PASS** / [ ] FAIL: Average enjoyment rating ≥ 7/10
 - Actual average rating: **\_\_**/10
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 ### 1.3 Completion Rate
 
 - [ ] **PASS** / [ ] FAIL: 80%+ of testers completed at least 15/20 levels
 - Actual completion rate: **\_\_**% (avg **\_** levels completed)
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 ### 1.4 Continuation Intent
 
 - [ ] **PASS** / [ ] FAIL: 70%+ of testers would continue playing more levels
 - Actual rate: **\_\_**%
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 **Critical Gates Status:** [ ] ALL PASSED / [ ] ONE OR MORE FAILED
 
@@ -46,25 +46,25 @@ This checklist determines whether the Pin Puzzle Game core gameplay has been suf
 
 - [ ] **PASS** / [ ] FAIL: 80%+ of testers rate difficulty as "Just Right"
 - Actual rate: **\_\_**% (Too Easy: **_%, Too Hard: _**%)
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 ### 2.2 Mechanics Clarity
 
 - [ ] **PASS** / [ ] FAIL: Average clarity rating ≥ 4/5
 - Actual average rating: **\_\_**/5
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 ### 2.3 Physics Polish
 
 - [ ] **PASS** / [ ] FAIL: Average physics realism rating ≥ 3.5/5
 - Actual average rating: **\_\_**/5
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 ### 2.4 Recommendation Score
 
 - [ ] **PASS** / [ ] FAIL: Average NPS ≥ 7/10
 - Actual average rating: **\_\_**/10
-- Notes: **************\*\*\*\***************\_**************\*\*\*\***************
+- Notes: ******\*\*******\*\*\*\*******\*\*******\_******\*\*******\*\*\*\*******\*\*******
 
 **Important Gates Status:** [ ] 3+ PASSED / [ ] FEWER THAN 3 PASSED
 
@@ -96,14 +96,14 @@ This checklist determines whether the Pin Puzzle Game core gameplay has been suf
 
 List any levels with completion rate < 50%:
 
-1. Level **_: Completion rate _**%, Issue: ******\*\*******\_******\*\*******
-2. Level **_: Completion rate _**%, Issue: ******\*\*******\_******\*\*******
-3. Level **_: Completion rate _**%, Issue: ******\*\*******\_******\*\*******
+1. Level **_: Completion rate _**%, Issue: **\*\***\*\***\*\***\_**\*\***\*\***\*\***
+2. Level **_: Completion rate _**%, Issue: **\*\***\*\***\*\***\_**\*\***\*\***\*\***
+3. Level **_: Completion rate _**%, Issue: **\*\***\*\***\*\***\_**\*\***\*\***\*\***
 
 ### Resolution Status
 
 - [ ] All red flag levels have been redesigned and retested
-- [ ] Red flags remain but are acceptable because: ****\*\*****\_****\*\*****
+- [ ] Red flags remain but are acceptable because: \***\*\*\*\*\***\_\***\*\*\*\*\***
 - [ ] No red flag levels identified
 
 ---
@@ -205,11 +205,11 @@ List any levels with completion rate < 50%:
 
 ## Approvals
 
-**Product Lead:** ****\*\*\*\*****\_****\*\*\*\***** Date: \***\*\_\_\*\***
+**Product Lead:** \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\*\***
 
-**Tech Lead:** ****\*\*\*\*****\_****\*\*\*\***** Date: \***\*\_\_\*\***
+**Tech Lead:** \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\*\***
 
-**QA/Playtest Lead:** ****\*\*\*\*****\_****\*\*\*\***** Date: \***\*\_\_\*\***
+**QA/Playtest Lead:** \***\*\*\*\*\*\*\***\_\***\*\*\*\*\*\*\*** Date: \***\*\_\_\*\***
 
 ---
 
