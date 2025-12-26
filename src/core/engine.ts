@@ -112,7 +112,6 @@ export class GameEngine {
     this.canvas.addEventListener('touchmove', (e) => {
       e.preventDefault();
       const touch = e.touches[0];
-      const rect = this.canvas.getBoundingClientRect();
       const mouseEvent = new MouseEvent('mousemove', {
         clientX: touch.clientX,
         clientY: touch.clientY
@@ -122,7 +121,6 @@ export class GameEngine {
     this.canvas.addEventListener('touchstart', (e) => {
       e.preventDefault();
       const touch = e.touches[0];
-      const rect = this.canvas.getBoundingClientRect();
       const mouseEvent = new MouseEvent('click', {
         clientX: touch.clientX,
         clientY: touch.clientY
@@ -183,10 +181,6 @@ export class GameEngine {
 
     // Remove wall associated with this pin
     // The wall is removed by finding chambers that this pin was blocking
-    const pinEndX = pin.x + Math.cos(pin.angle) * pin.length;
-    const pinEndY = pin.y + Math.sin(pin.angle) * pin.length;
-
-    // Remove the wall segment that this pin was part of
     for (let i = this.walls.length - 1; i >= 0; i--) {
       const wall = this.walls[i];
       
@@ -201,9 +195,6 @@ export class GameEngine {
   }
 
   private pinIntersectsWall(pin: Pin, wall: { x: number; y: number; width: number; height: number }): boolean {
-    const pinEndX = pin.x + Math.cos(pin.angle) * pin.length;
-    const pinEndY = pin.y + Math.sin(pin.angle) * pin.length;
-
     // Check if pin crosses any edge of the wall
     // Simplified: check if pin endpoints are on different sides of wall boundaries
     const tolerance = 5;
