@@ -1,14 +1,17 @@
+import { HintManager } from '../core/hint-manager';
+import { Physics } from '../core/physics';
+import { ProgressManager } from '../core/progress-manager';
+import { Renderer, VisualEffect } from '../core/renderer';
+import levelsData from '../data/levels.json';
 import type {
+  GameState,
   LevelData,
+  LevelSession,
+  Monster,
   Particle,
   Pin,
   Vec2,
-  GameState,
-  LevelSession,
 } from '../types';
-import { Physics } from '../core/physics';
-import { Renderer } from '../core/renderer';
-import levelsData from '../data/levels.json';
 
 export class GameEngine {
   private readonly canvas: HTMLCanvasElement;
@@ -16,6 +19,7 @@ export class GameEngine {
   private readonly physics: Physics;
   private currentLevel: LevelData;
   private particles: Particle[] = [];
+  private monsters: Monster[] = [];
   private pins: Pin[] = [];
   private walls: { x: number; y: number; width: number; height: number }[] = [];
   private treasure: Vec2 = { x: 0, y: 0 };
@@ -25,15 +29,25 @@ export class GameEngine {
   private levelStartTime: number = 0;
   private readonly sessions: LevelSession[] = [];
   private currentSession: LevelSession | null = null;
+
   private readonly playerId: string;
+  private readonly hintManager: HintManager;
+  private readonly progressManager: ProgressManager;
+  private effects: VisualEffect[] = [];
 
   // UI callback
   public onStateChange?: (state: GameState) => void;
+  public onHintAvailable?: () => void;
+  public onAudioEvent?: (
+    event: 'pull' | 'win' | 'lose' | 'steam' | 'water'
+  ) => void;
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
     this.renderer = new Renderer(canvas);
     this.physics = new Physics();
+    this.hintManager = new HintManager();
+    this.progressManager = new ProgressManager();
     this.currentLevel = levelsData[0] as LevelData;
     this.gameState = {
       currentLevel: 1,
@@ -53,6 +67,7 @@ export class GameEngine {
   private setupLevel(levelData: LevelData): void {
     this.currentLevel = levelData;
     this.particles = [];
+    this.monsters = [];
     this.pins = [];
     this.walls = [];
 
@@ -94,6 +109,21 @@ export class GameEngine {
       }
     }
 
+    // Setup monsters
+    if (levelData.monsters) {
+      for (const mData of levelData.monsters) {
+        this.monsters.push({
+          id: mData.id,
+          x: mData.x,
+          y: mData.y,
+          vx: (Math.random() - 0.5) * 2,
+          vy: 0,
+          type: mData.type,
+          active: true,
+        });
+      }
+    }
+
     // Setup treasure
     this.treasure = levelData.treasure;
 
@@ -111,6 +141,8 @@ export class GameEngine {
       pinPullSequence: [],
       success: false,
     };
+
+    this.hintManager.resetLevel();
   }
 
   private setupInputHandlers(): void {
@@ -175,6 +207,9 @@ export class GameEngine {
         break;
       }
     }
+
+    // Reset idle timer on interaction
+    this.hintManager.recordAction();
   }
 
   private pullPin(pin: Pin): void {
@@ -199,6 +234,18 @@ export class GameEngine {
     }
 
     this.notifyStateChange();
+
+    // Trigger effects
+    if (this.onAudioEvent) this.onAudioEvent('pull');
+
+    // Add sparkle effect at pin head
+    this.effects.push({
+      x: pin.x,
+      y: pin.y,
+      type: 'sparkle',
+      age: 0,
+      maxAge: 20,
+    });
   }
 
   private pinIntersectsWall(
@@ -264,13 +311,23 @@ export class GameEngine {
     if (this.gameState.gameStatus !== 'playing') return;
 
     // Update physics
-    this.physics.update(this.particles, this.walls, dt);
+    this.physics.update(this.particles, this.monsters, this.walls, dt);
 
     // Check win condition (water reaches treasure)
     if (this.physics.checkTreasureContact(this.particles, this.treasure)) {
       this.gameState.gameStatus = 'won';
+
+      const elapsedTime = (Date.now() - this.gameState.levelStartTime) / 1000;
+      this.progressManager.completeLevel(
+        this.currentLevel.id,
+        elapsedTime,
+        this.currentLevel.targetTime
+      );
+
       this.finishLevel(true);
+
       this.notifyStateChange();
+      if (this.onAudioEvent) this.onAudioEvent('win');
     }
 
     // Check lose condition (lava reaches treasure)
@@ -278,6 +335,29 @@ export class GameEngine {
       this.gameState.gameStatus = 'lost';
       this.finishLevel(false);
       this.notifyStateChange();
+      if (this.onAudioEvent) this.onAudioEvent('lose');
+    }
+
+    // Check monster lose condition
+    if (this.physics.checkMonsterContact(this.monsters, this.treasure)) {
+      this.gameState.gameStatus = 'lost';
+      this.finishLevel(false);
+      this.notifyStateChange();
+      if (this.onAudioEvent) this.onAudioEvent('lose');
+    }
+
+    // Update hints
+    this.hintManager.update(dt * 16, this.gameState);
+    if (this.hintManager.isHintAvailable() && this.onHintAvailable) {
+      this.onHintAvailable();
+    }
+
+    // Update effects
+    for (let i = this.effects.length - 1; i >= 0; i--) {
+      this.effects[i].age += dt;
+      if (this.effects[i].age >= this.effects[i].maxAge) {
+        this.effects.splice(i, 1);
+      }
     }
   }
 
@@ -303,8 +383,14 @@ export class GameEngine {
       );
     }
 
+    // Draw effects (behind particles/pins)
+    this.renderer.drawEffects(this.effects);
+
     // Draw particles
     this.renderer.drawParticles(this.particles);
+
+    // Draw monsters
+    this.renderer.drawMonsters(this.monsters);
 
     // Draw treasure
     this.renderer.drawTreasure(
@@ -336,15 +422,30 @@ export class GameEngine {
 
   public nextLevel(): void {
     if (this.gameState.currentLevel < levelsData.length) {
-      this.gameState.currentLevel++;
+      this.loadLevelIndex(this.gameState.currentLevel);
+    }
+  }
+
+  public loadLevelIndex(index: number): void {
+    if (index >= 0 && index < levelsData.length) {
+      this.gameState.currentLevel = index + 1;
       this.gameState.resets = 0;
       this.gameState.pinsPulled = 0;
-      this.currentLevel = levelsData[
-        this.gameState.currentLevel - 1
-      ] as LevelData;
+      this.currentLevel = levelsData[index] as LevelData;
       this.setupLevel(this.currentLevel);
       this.notifyStateChange();
     }
+  }
+
+  public loadLevelData(levelData: LevelData): void {
+    // For custom levels, use a special ID or keep existing
+    this.currentLevel = levelData;
+    // Reset state for new level
+    this.gameState.currentLevel = -1; // Indicator for custom level
+    this.gameState.resets = 0;
+    this.gameState.pinsPulled = 0;
+    this.setupLevel(this.currentLevel);
+    this.notifyStateChange();
   }
 
   public getState(): GameState {
@@ -372,5 +473,8 @@ export class GameEngine {
     if (this.onStateChange) {
       this.onStateChange(this.getState());
     }
+  }
+  public getProgressManager(): ProgressManager {
+    return this.progressManager;
   }
 }

@@ -1,4 +1,12 @@
-import type { Particle, Pin, Vec2 } from '../types';
+import type { Monster, Particle, Pin, Vec2 } from '../types';
+
+export interface VisualEffect {
+  x: number;
+  y: number;
+  type: 'sparkle' | 'steam' | 'splash';
+  age: number;
+  maxAge: number;
+}
 
 export class Renderer {
   private readonly ctx: CanvasRenderingContext2D;
@@ -88,8 +96,37 @@ export class Renderer {
       } else if (p.type === 'steam') {
         this.ctx.fillStyle = 'rgba(200, 200, 200, 0.5)';
         this.ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
+      } else if (p.type === 'gas') {
+        this.ctx.fillStyle = 'rgba(50, 200, 50, 0.4)';
+        this.ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
       }
 
+      this.ctx.fill();
+    }
+  }
+
+  drawMonsters(monsters: Monster[]): void {
+    if (!monsters) return;
+    for (const m of monsters) {
+      if (!m.active) continue;
+
+      // Draw Blob Monster
+      this.ctx.fillStyle = '#e53e3e'; // Red body
+      this.ctx.beginPath();
+      this.ctx.arc(m.x, m.y, 10, 0, Math.PI * 2);
+      this.ctx.fill();
+
+      // Eyes
+      this.ctx.fillStyle = 'white';
+      this.ctx.beginPath();
+      this.ctx.arc(m.x - 3, m.y - 3, 3, 0, Math.PI * 2);
+      this.ctx.arc(m.x + 3, m.y - 3, 3, 0, Math.PI * 2);
+      this.ctx.fill();
+
+      this.ctx.fillStyle = 'black';
+      this.ctx.beginPath();
+      this.ctx.arc(m.x - 3, m.y - 3, 1, 0, Math.PI * 2);
+      this.ctx.arc(m.x + 3, m.y - 3, 1, 0, Math.PI * 2);
       this.ctx.fill();
     }
   }
@@ -152,5 +189,23 @@ export class Renderer {
     // Draw text
     this.ctx.fillStyle = '#2d3748';
     this.ctx.fillText(message, this.width / 2, y);
+  }
+
+  drawEffects(effects: VisualEffect[]): void {
+    for (const effect of effects) {
+      const alpha = 1 - effect.age / effect.maxAge;
+      this.ctx.globalAlpha = alpha;
+
+      this.ctx.beginPath();
+      if (effect.type === 'sparkle') {
+        this.ctx.fillStyle = '#ffd700';
+        this.ctx.arc(effect.x, effect.y, 2 + Math.random() * 2, 0, Math.PI * 2);
+      } else if (effect.type === 'steam') {
+        this.ctx.fillStyle = '#e2e8f0';
+        this.ctx.arc(effect.x, effect.y, 5 + effect.age * 0.2, 0, Math.PI * 2);
+      }
+      this.ctx.fill();
+    }
+    this.ctx.globalAlpha = 1;
   }
 }

@@ -11,6 +11,7 @@ export interface LevelData {
   description: string;
   pins: PinData[];
   chambers: ChamberData[];
+  monsters: MonsterData[];
   treasure: Vec2;
   targetTime: number;
 }
@@ -28,7 +29,7 @@ export interface ChamberData {
   y: number;
   width: number;
   height: number;
-  type: 'water' | 'lava' | 'empty';
+  type: 'water' | 'lava' | 'gas' | 'empty';
   particleCount: number;
 }
 
@@ -37,7 +38,7 @@ export interface Particle {
   y: number;
   vx: number;
   vy: number;
-  type: 'water' | 'lava' | 'steam';
+  type: 'water' | 'lava' | 'steam' | 'gas';
   active: boolean;
   mass: number;
 }
@@ -50,6 +51,23 @@ export interface Pin {
   length: number;
   pulled: boolean;
   hover: boolean;
+}
+
+export interface MonsterData {
+  id: number;
+  x: number;
+  y: number;
+  type: 'blob';
+}
+
+export interface Monster {
+  id: number;
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+  type: 'blob';
+  active: boolean;
 }
 
 export interface PlaytestMetrics {

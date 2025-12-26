@@ -140,6 +140,9 @@
   </head>
   <body>
     <div id="app">
+      <div class="top-bar">
+        <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
+      </div>
       <canvas id="game-canvas" width="800" height="600"></canvas>
       <div id="ui-container">
         <div class="level-info">
@@ -166,10 +169,37 @@
           <button id="next-btn" class="btn-primary" style="display: none">
             Next Level
           </button>
+          <button id="hint-btn" class="btn-success">
+            💡 Hint
+          </button>
         </div>
         <button id="export-btn" class="btn-success">
           Export Playtest Data
         </button>
+      </div>
+      </div>
+    </div>
+
+    <!-- Hint Modal -->
+    <div id="hint-modal" class="modal-overlay">
+      <div class="modal">
+        <h3>💡 Hint</h3>
+        <p id="hint-text">Try pulling the middle pin first!</p>
+        <button class="btn-primary" onclick="document.getElementById('hint-modal').classList.remove('active')">Got it!</button>
+      </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal-overlay">
+      <div class="modal">
+        <h3>⚙️ Settings</h3>
+        <div style="margin-bottom: 20px; text-align: left;">
+          <label style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+            <span>Sound Effects</span>
+            <input type="checkbox" id="sfx-toggle" checked>
+          </label>
+        </div>
+        <button class="btn-secondary" onclick="document.getElementById('settings-modal').classList.remove('active')">Close</button>
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>

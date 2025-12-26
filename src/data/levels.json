@@ -4,7 +4,15 @@
     "title": "Level 1: First Drop",
     "description": "Pull the pin to guide the water!",
     "targetTime": 30,
-    "pins": [{ "id": 1, "x": 400, "y": 200, "angle": 1.57, "length": 100 }],
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
     "chambers": [
       {
         "x": 350,
@@ -23,7 +31,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 450 }
+    "treasure": {
+      "x": 400,
+      "y": 450
+    }
   },
   {
     "id": 2,
@@ -31,8 +42,20 @@
     "description": "Guide water, but avoid the lava!",
     "targetTime": 45,
     "pins": [
-      { "id": 1, "x": 300, "y": 200, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 500, "y": 200, "angle": 1.57, "length": 100 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -68,7 +91,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 300, "y": 500 }
+    "treasure": {
+      "x": 300,
+      "y": 500
+    }
   },
   {
     "id": 3,
@@ -76,8 +102,20 @@
     "description": "Water extinguishes lava! Use it wisely.",
     "targetTime": 60,
     "pins": [
-      { "id": 1, "x": 300, "y": 200, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 500, "y": 300, "angle": 1.57, "length": 100 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -113,7 +151,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 450, "y": 520 }
+    "treasure": {
+      "x": 450,
+      "y": 520
+    }
   },
   {
     "id": 4,
@@ -121,9 +162,27 @@
     "description": "Choose your path carefully.",
     "targetTime": 60,
     "pins": [
-      { "id": 1, "x": 400, "y": 200, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 250, "y": 350, "angle": 0, "length": 100 },
-      { "id": 3, "x": 550, "y": 350, "angle": 3.14, "length": 100 }
+      {
+        "id": 1,
+        "x": 400,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 250,
+        "y": 350,
+        "angle": 0,
+        "length": 100
+      },
+      {
+        "id": 3,
+        "x": 550,
+        "y": 350,
+        "angle": 3.14,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -159,7 +218,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 550, "y": 500 }
+    "treasure": {
+      "x": 550,
+      "y": 500
+    }
   },
   {
     "id": 5,
@@ -167,9 +229,27 @@
     "description": "Water can create a safe path.",
     "targetTime": 75,
     "pins": [
-      { "id": 1, "x": 250, "y": 200, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 400, "y": 350, "angle": 0, "length": 100 },
-      { "id": 3, "x": 550, "y": 200, "angle": 1.57, "length": 100 }
+      {
+        "id": 1,
+        "x": 250,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 350,
+        "angle": 0,
+        "length": 100
+      },
+      {
+        "id": 3,
+        "x": 550,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -213,7 +293,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 520 }
+    "treasure": {
+      "x": 400,
+      "y": 520
+    }
   },
   {
     "id": 6,
@@ -221,9 +304,27 @@
     "description": "Pull pins in the right order!",
     "targetTime": 90,
     "pins": [
-      { "id": 1, "x": 300, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 2, "x": 500, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 3, "x": 400, "y": 300, "angle": 1.57, "length": 100 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -267,7 +368,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 500 }
+    "treasure": {
+      "x": 400,
+      "y": 500
+    }
   },
   {
     "id": 7,
@@ -275,9 +379,27 @@
     "description": "Direct the flow through the funnel.",
     "targetTime": 75,
     "pins": [
-      { "id": 1, "x": 400, "y": 150, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 350, "y": 300, "angle": 0, "length": 50 },
-      { "id": 3, "x": 450, "y": 300, "angle": 3.14, "length": 50 }
+      {
+        "id": 1,
+        "x": 400,
+        "y": 150,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 350,
+        "y": 300,
+        "angle": 0,
+        "length": 50
+      },
+      {
+        "id": 3,
+        "x": 450,
+        "y": 300,
+        "angle": 3.14,
+        "length": 50
+      }
     ],
     "chambers": [
       {
@@ -313,7 +435,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 480 }
+    "treasure": {
+      "x": 400,
+      "y": 480
+    }
   },
   {
     "id": 8,
@@ -321,9 +446,27 @@
     "description": "Two water sources, one goal.",
     "targetTime": 90,
     "pins": [
-      { "id": 1, "x": 250, "y": 200, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 550, "y": 200, "angle": 1.57, "length": 100 },
-      { "id": 3, "x": 400, "y": 350, "angle": 1.57, "length": 80 }
+      {
+        "id": 1,
+        "x": 250,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 550,
+        "y": 200,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 3,
+        "x": 400,
+        "y": 350,
+        "angle": 1.57,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -367,7 +510,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 520 }
+    "treasure": {
+      "x": 400,
+      "y": 520
+    }
   },
   {
     "id": 9,
@@ -375,9 +521,27 @@
     "description": "Navigate through the chambers.",
     "targetTime": 120,
     "pins": [
-      { "id": 1, "x": 300, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 2, "x": 400, "y": 250, "angle": 0, "length": 80 },
-      { "id": 3, "x": 500, "y": 350, "angle": 1.57, "length": 80 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 250,
+        "angle": 0,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 500,
+        "y": 350,
+        "angle": 1.57,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -421,7 +585,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 500, "y": 520 }
+    "treasure": {
+      "x": 500,
+      "y": 520
+    }
   },
   {
     "id": 10,
@@ -429,9 +596,27 @@
     "description": "Let the water cascade down.",
     "targetTime": 100,
     "pins": [
-      { "id": 1, "x": 350, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 2, "x": 450, "y": 250, "angle": 1.57, "length": 80 },
-      { "id": 3, "x": 550, "y": 350, "angle": 1.57, "length": 80 }
+      {
+        "id": 1,
+        "x": 350,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 450,
+        "y": 250,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 550,
+        "y": 350,
+        "angle": 1.57,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -475,7 +660,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 550, "y": 520 }
+    "treasure": {
+      "x": 550,
+      "y": 520
+    }
   },
   {
     "id": 11,
@@ -483,10 +671,34 @@
     "description": "Divide and conquer the lava.",
     "targetTime": 120,
     "pins": [
-      { "id": 1, "x": 400, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 2, "x": 300, "y": 280, "angle": 0.78, "length": 100 },
-      { "id": 3, "x": 500, "y": 280, "angle": 2.36, "length": 100 },
-      { "id": 4, "x": 400, "y": 400, "angle": 1.57, "length": 80 }
+      {
+        "id": 1,
+        "x": 400,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 300,
+        "y": 280,
+        "angle": 0.78,
+        "length": 100
+      },
+      {
+        "id": 3,
+        "x": 500,
+        "y": 280,
+        "angle": 2.36,
+        "length": 100
+      },
+      {
+        "id": 4,
+        "x": 400,
+        "y": 400,
+        "angle": 1.57,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -530,7 +742,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 540 }
+    "treasure": {
+      "x": 400,
+      "y": 540
+    }
   },
   {
     "id": 12,
@@ -538,9 +753,27 @@
     "description": "Fill the chamber strategically.",
     "targetTime": 140,
     "pins": [
-      { "id": 1, "x": 300, "y": 180, "angle": 1.57, "length": 100 },
-      { "id": 2, "x": 500, "y": 180, "angle": 1.57, "length": 100 },
-      { "id": 3, "x": 350, "y": 350, "angle": 0, "length": 100 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 180,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 180,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 3,
+        "x": 350,
+        "y": 350,
+        "angle": 0,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -584,7 +817,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 450, "y": 520 }
+    "treasure": {
+      "x": 450,
+      "y": 520
+    }
   },
   {
     "id": 13,
@@ -592,10 +828,34 @@
     "description": "Precise timing required!",
     "targetTime": 150,
     "pins": [
-      { "id": 1, "x": 350, "y": 150, "angle": 1.57, "length": 70 },
-      { "id": 2, "x": 450, "y": 220, "angle": 1.57, "length": 70 },
-      { "id": 3, "x": 350, "y": 300, "angle": 1.57, "length": 70 },
-      { "id": 4, "x": 450, "y": 370, "angle": 1.57, "length": 70 }
+      {
+        "id": 1,
+        "x": 350,
+        "y": 150,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 2,
+        "x": 450,
+        "y": 220,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 3,
+        "x": 350,
+        "y": 300,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 4,
+        "x": 450,
+        "y": 370,
+        "angle": 1.57,
+        "length": 70
+      }
     ],
     "chambers": [
       {
@@ -639,7 +899,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 450, "y": 520 }
+    "treasure": {
+      "x": 450,
+      "y": 520
+    }
   },
   {
     "id": 14,
@@ -647,10 +910,34 @@
     "description": "Navigate through multiple obstacles.",
     "targetTime": 160,
     "pins": [
-      { "id": 1, "x": 250, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 2, "x": 400, "y": 250, "angle": 1.57, "length": 80 },
-      { "id": 3, "x": 550, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 4, "x": 400, "y": 380, "angle": 1.57, "length": 70 }
+      {
+        "id": 1,
+        "x": 250,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 250,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 550,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 4,
+        "x": 400,
+        "y": 380,
+        "angle": 1.57,
+        "length": 70
+      }
     ],
     "chambers": [
       {
@@ -702,7 +989,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 540 }
+    "treasure": {
+      "x": 400,
+      "y": 540
+    }
   },
   {
     "id": 15,
@@ -710,10 +1000,34 @@
     "description": "Think several steps ahead.",
     "targetTime": 180,
     "pins": [
-      { "id": 1, "x": 300, "y": 130, "angle": 1.57, "length": 70 },
-      { "id": 2, "x": 500, "y": 130, "angle": 1.57, "length": 70 },
-      { "id": 3, "x": 350, "y": 250, "angle": 0, "length": 100 },
-      { "id": 4, "x": 400, "y": 350, "angle": 1.57, "length": 80 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 130,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 130,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 3,
+        "x": 350,
+        "y": 250,
+        "angle": 0,
+        "length": 100
+      },
+      {
+        "id": 4,
+        "x": 400,
+        "y": 350,
+        "angle": 1.57,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -765,7 +1079,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 540 }
+    "treasure": {
+      "x": 400,
+      "y": 540
+    }
   },
   {
     "id": 16,
@@ -773,10 +1090,34 @@
     "description": "Manage the water reservoir carefully.",
     "targetTime": 170,
     "pins": [
-      { "id": 1, "x": 350, "y": 180, "angle": 0, "length": 100 },
-      { "id": 2, "x": 450, "y": 180, "angle": 3.14, "length": 100 },
-      { "id": 3, "x": 400, "y": 300, "angle": 1.57, "length": 100 },
-      { "id": 4, "x": 300, "y": 420, "angle": 0, "length": 100 }
+      {
+        "id": 1,
+        "x": 350,
+        "y": 180,
+        "angle": 0,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 450,
+        "y": 180,
+        "angle": 3.14,
+        "length": 100
+      },
+      {
+        "id": 3,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 4,
+        "x": 300,
+        "y": 420,
+        "angle": 0,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -812,7 +1153,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 450, "y": 540 }
+    "treasure": {
+      "x": 450,
+      "y": 540
+    }
   },
   {
     "id": 17,
@@ -820,10 +1164,34 @@
     "description": "One pull triggers everything.",
     "targetTime": 160,
     "pins": [
-      { "id": 1, "x": 400, "y": 150, "angle": 1.57, "length": 80 },
-      { "id": 2, "x": 300, "y": 270, "angle": 0, "length": 80 },
-      { "id": 3, "x": 500, "y": 270, "angle": 3.14, "length": 80 },
-      { "id": 4, "x": 400, "y": 380, "angle": 1.57, "length": 80 }
+      {
+        "id": 1,
+        "x": 400,
+        "y": 150,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 300,
+        "y": 270,
+        "angle": 0,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 500,
+        "y": 270,
+        "angle": 3.14,
+        "length": 80
+      },
+      {
+        "id": 4,
+        "x": 400,
+        "y": 380,
+        "angle": 1.57,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -867,7 +1235,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 540 }
+    "treasure": {
+      "x": 400,
+      "y": 540
+    }
   },
   {
     "id": 18,
@@ -875,11 +1246,41 @@
     "description": "Master level - think carefully!",
     "targetTime": 200,
     "pins": [
-      { "id": 1, "x": 250, "y": 130, "angle": 1.57, "length": 70 },
-      { "id": 2, "x": 400, "y": 130, "angle": 1.57, "length": 70 },
-      { "id": 3, "x": 550, "y": 130, "angle": 1.57, "length": 70 },
-      { "id": 4, "x": 325, "y": 280, "angle": 0, "length": 80 },
-      { "id": 5, "x": 475, "y": 280, "angle": 3.14, "length": 80 }
+      {
+        "id": 1,
+        "x": 250,
+        "y": 130,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 130,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 3,
+        "x": 550,
+        "y": 130,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 4,
+        "x": 325,
+        "y": 280,
+        "angle": 0,
+        "length": 80
+      },
+      {
+        "id": 5,
+        "x": 475,
+        "y": 280,
+        "angle": 3.14,
+        "length": 80
+      }
     ],
     "chambers": [
       {
@@ -947,7 +1348,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 400, "y": 540 }
+    "treasure": {
+      "x": 400,
+      "y": 540
+    }
   },
   {
     "id": 19,
@@ -955,11 +1359,41 @@
     "description": "Wait for the right moment to act.",
     "targetTime": 210,
     "pins": [
-      { "id": 1, "x": 350, "y": 120, "angle": 1.57, "length": 60 },
-      { "id": 2, "x": 450, "y": 180, "angle": 1.57, "length": 60 },
-      { "id": 3, "x": 350, "y": 260, "angle": 1.57, "length": 60 },
-      { "id": 4, "x": 450, "y": 320, "angle": 1.57, "length": 60 },
-      { "id": 5, "x": 350, "y": 400, "angle": 1.57, "length": 60 }
+      {
+        "id": 1,
+        "x": 350,
+        "y": 120,
+        "angle": 1.57,
+        "length": 60
+      },
+      {
+        "id": 2,
+        "x": 450,
+        "y": 180,
+        "angle": 1.57,
+        "length": 60
+      },
+      {
+        "id": 3,
+        "x": 350,
+        "y": 260,
+        "angle": 1.57,
+        "length": 60
+      },
+      {
+        "id": 4,
+        "x": 450,
+        "y": 320,
+        "angle": 1.57,
+        "length": 60
+      },
+      {
+        "id": 5,
+        "x": 350,
+        "y": 400,
+        "angle": 1.57,
+        "length": 60
+      }
     ],
     "chambers": [
       {
@@ -1011,7 +1445,10 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 350, "y": 540 }
+    "treasure": {
+      "x": 350,
+      "y": 540
+    }
   },
   {
     "id": 20,
@@ -1019,12 +1456,48 @@
     "description": "Everything you've learned comes together!",
     "targetTime": 240,
     "pins": [
-      { "id": 1, "x": 300, "y": 120, "angle": 1.57, "length": 70 },
-      { "id": 2, "x": 500, "y": 120, "angle": 1.57, "length": 70 },
-      { "id": 3, "x": 250, "y": 240, "angle": 0, "length": 100 },
-      { "id": 4, "x": 550, "y": 240, "angle": 3.14, "length": 100 },
-      { "id": 5, "x": 400, "y": 340, "angle": 1.57, "length": 90 },
-      { "id": 6, "x": 350, "y": 460, "angle": 0, "length": 100 }
+      {
+        "id": 1,
+        "x": 300,
+        "y": 120,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 120,
+        "angle": 1.57,
+        "length": 70
+      },
+      {
+        "id": 3,
+        "x": 250,
+        "y": 240,
+        "angle": 0,
+        "length": 100
+      },
+      {
+        "id": 4,
+        "x": 550,
+        "y": 240,
+        "angle": 3.14,
+        "length": 100
+      },
+      {
+        "id": 5,
+        "x": 400,
+        "y": 340,
+        "angle": 1.57,
+        "length": 90
+      },
+      {
+        "id": 6,
+        "x": 350,
+        "y": 460,
+        "angle": 0,
+        "length": 100
+      }
     ],
     "chambers": [
       {
@@ -1100,6 +1573,1664 @@
         "particleCount": 0
       }
     ],
-    "treasure": { "x": 450, "y": 560 }
+    "treasure": {
+      "x": 450,
+      "y": 560
+    }
+  },
+  {
+    "id": 21,
+    "title": "Level 21: Rising Gas",
+    "description": "Gas rises! Keep it away from the treasure.",
+    "targetTime": 45,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 250,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 150,
+        "width": 100,
+        "height": 100,
+        "type": "gas",
+        "particleCount": 50
+      },
+      {
+        "x": 350,
+        "y": 300,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 50
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 500
+    }
+  },
+  {
+    "id": 22,
+    "title": "Level 22: Gas Trap",
+    "description": "Don't let the gas escape up!",
+    "targetTime": 60,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 0,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 3.14,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 300,
+        "width": 100,
+        "height": 100,
+        "type": "gas",
+        "particleCount": 60
+      },
+      {
+        "x": 200,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 50
+      },
+      {
+        "x": 500,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 50
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 23,
+    "title": "Level 23: Monster Intro",
+    "description": "Monsters are dangerous! Don't let them touch the treasure.",
+    "targetTime": 45,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 50
+      },
+      {
+        "x": 350,
+        "y": 200,
+        "width": 100,
+        "height": 100,
+        "type": "empty",
+        "particleCount": 0
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 250,
+        "y": 150,
+        "type": "blob"
+      },
+      {
+        "id": 2,
+        "x": 550,
+        "y": 150,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 500
+    }
+  },
+  {
+    "id": 24,
+    "title": "Level 24: Monster Pit",
+    "description": "Drop the monster into lava or trap it.",
+    "targetTime": 60,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 250,
+        "angle": 1.57,
+        "length": 100
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 250,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "lava",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 150,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 250,
+      "y": 450
+    }
+  },
+  {
+    "id": 25,
+    "title": "Level 25: The Guard",
+    "description": "A monster guards the path.",
+    "targetTime": 60,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 200,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 300,
+        "y": 50,
+        "width": 200,
+        "height": 80,
+        "type": "water",
+        "particleCount": 80
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 250,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 500
+    }
+  },
+  {
+    "id": 26,
+    "title": "Level 26: Mixed Hazard",
+    "description": "Gas, Lava, and Monsters!",
+    "targetTime": 90,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 400,
+        "y": 350,
+        "angle": 0,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "lava",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 250,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 27,
+    "title": "Level 27: Anti-Gravity",
+    "description": "Use the gas to lift obstacles (concept).",
+    "targetTime": 70,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 100,
+        "type": "gas",
+        "particleCount": 80
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 50
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 28,
+    "title": "Level 28: Monster Chaos",
+    "description": "Multiple monsters!",
+    "targetTime": 80,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 300,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 300,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 250,
+        "y": 200,
+        "type": "blob"
+      },
+      {
+        "id": 2,
+        "x": 550,
+        "y": 200,
+        "type": "blob"
+      },
+      {
+        "id": 3,
+        "x": 400,
+        "y": 250,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 29,
+    "title": "Level 29: Tight Squeeze",
+    "description": "Narrow passages.",
+    "targetTime": 90,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 200,
+        "angle": 1.57,
+        "length": 50
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 50
+      }
+    ],
+    "chambers": [
+      {
+        "x": 380,
+        "y": 100,
+        "width": 40,
+        "height": 100,
+        "type": "water",
+        "particleCount": 30
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 300,
+        "type": "blob"
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 300,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 500
+    }
+  },
+  {
+    "id": 30,
+    "title": "Level 30: Triple Threat",
+    "description": "Gas, Lava, Water - Separate them.",
+    "targetTime": 100,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 3,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 80,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 30
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 80,
+        "height": 80,
+        "type": "water",
+        "particleCount": 30
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 80,
+        "height": 80,
+        "type": "lava",
+        "particleCount": 30
+      }
+    ],
+    "treasure": {
+      "x": 350,
+      "y": 500
+    }
+  },
+  {
+    "id": 31,
+    "title": "Level 31: The Gauntlet 2",
+    "description": "More monsters, more danger.",
+    "targetTime": 120,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 150,
+        "angle": 0,
+        "length": 150
+      },
+      {
+        "id": 2,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 150
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 250,
+        "y": 200,
+        "type": "blob"
+      },
+      {
+        "id": 2,
+        "x": 550,
+        "y": 200,
+        "type": "blob"
+      },
+      {
+        "id": 3,
+        "x": 250,
+        "y": 400,
+        "type": "blob"
+      },
+      {
+        "id": 4,
+        "x": 550,
+        "y": 400,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 32,
+    "title": "Level 32: Challenge 1",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 74,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 550.1543203329331,
+        "y": 279.2343388191011,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 33,
+    "title": "Level 33: Challenge 2",
+    "description": "Procedurally generated challenge (split_path)",
+    "targetTime": 113,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 34,
+    "title": "Level 34: Challenge 3",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 85,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 274.5445364244564,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 54
+      },
+      {
+        "x": 200,
+        "y": 300,
+        "width": 100,
+        "height": 100,
+        "type": "lava",
+        "particleCount": 30
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 35,
+    "title": "Level 35: Challenge 4",
+    "description": "Procedurally generated challenge (gas_chamber)",
+    "targetTime": 88,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 36,
+    "title": "Level 36: Challenge 5",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 70,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 211.17223055384508,
+        "y": 218.7531603236234,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 37,
+    "title": "Level 37: Challenge 6",
+    "description": "Procedurally generated challenge (split_path)",
+    "targetTime": 72,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 38,
+    "title": "Level 38: Challenge 7",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 71,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 209.77057324862454,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 85
+      },
+      {
+        "x": 200,
+        "y": 300,
+        "width": 100,
+        "height": 100,
+        "type": "lava",
+        "particleCount": 30
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 39,
+    "title": "Level 39: Challenge 8",
+    "description": "Procedurally generated challenge (gas_chamber)",
+    "targetTime": 84,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 40,
+    "title": "Level 40: Challenge 9",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 117,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 350.9723711523377,
+        "y": 290.3594070095421,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 41,
+    "title": "Level 41: Challenge 10",
+    "description": "Procedurally generated challenge (split_path)",
+    "targetTime": 107,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 42,
+    "title": "Level 42: Challenge 11",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 66,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 256.8712306934824,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 92
+      },
+      {
+        "x": 200,
+        "y": 300,
+        "width": 100,
+        "height": 100,
+        "type": "lava",
+        "particleCount": 30
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 43,
+    "title": "Level 43: Challenge 12",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 115,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 564.8789218479353,
+        "y": 296.3002675323971,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 44,
+    "title": "Level 44: Challenge 13",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 105,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 206.5619157922934,
+        "y": 248.58493484910653,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 45,
+    "title": "Level 45: Challenge 14",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 98,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 392.35302355146337,
+        "y": 292.44063140557716,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 46,
+    "title": "Level 46: Challenge 15",
+    "description": "Procedurally generated challenge (gas_chamber)",
+    "targetTime": 74,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 47,
+    "title": "Level 47: Challenge 16",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 73,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 342.60686771996814,
+        "y": 221.04751270484138,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 48,
+    "title": "Level 48: Challenge 17",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 92,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 240.93825760032092,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 92
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 49,
+    "title": "Level 49: Challenge 18",
+    "description": "Procedurally generated challenge (gas_chamber)",
+    "targetTime": 67,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 50,
+    "title": "Level 50: Challenge 19",
+    "description": "Procedurally generated challenge (split_path)",
+    "targetTime": 102,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "lava",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 51,
+    "title": "Level 51: Challenge 20",
+    "description": "Procedurally generated challenge (split_path)",
+    "targetTime": 118,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 52,
+    "title": "Level 52: Challenge 21",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 87,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 281.1220006465511,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 61
+      },
+      {
+        "x": 200,
+        "y": 300,
+        "width": 100,
+        "height": 100,
+        "type": "lava",
+        "particleCount": 30
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 53,
+    "title": "Level 53: Challenge 22",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 101,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 239.07167614810632,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 73
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 54,
+    "title": "Level 54: Challenge 23",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 118,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 279.53972823749086,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 54
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 55,
+    "title": "Level 55: Challenge 24",
+    "description": "Procedurally generated challenge (gas_chamber)",
+    "targetTime": 84,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 56,
+    "title": "Level 56: Challenge 25",
+    "description": "Procedurally generated challenge (split_path)",
+    "targetTime": 83,
+    "pins": [
+      {
+        "id": 1,
+        "x": 300,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      },
+      {
+        "id": 2,
+        "x": 500,
+        "y": 200,
+        "angle": 1.57,
+        "length": 80
+      }
+    ],
+    "chambers": [
+      {
+        "x": 250,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      },
+      {
+        "x": 450,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 57,
+    "title": "Level 57: Challenge 26",
+    "description": "Procedurally generated challenge (gas_chamber)",
+    "targetTime": 88,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 400,
+        "width": 100,
+        "height": 80,
+        "type": "gas",
+        "particleCount": 40
+      },
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 80,
+        "type": "water",
+        "particleCount": 40
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 58,
+    "title": "Level 58: Challenge 27",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 63,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 498.52386472633043,
+        "y": 211.3008940279507,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 59,
+    "title": "Level 59: Challenge 28",
+    "description": "Procedurally generated challenge (simple_drop)",
+    "targetTime": 62,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 204.26834964884043,
+        "angle": 1.57,
+        "length": 100
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 100,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 51
+      }
+    ],
+    "monsters": [],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
+  },
+  {
+    "id": 60,
+    "title": "Level 60: Challenge 29",
+    "description": "Procedurally generated challenge (monster_guard)",
+    "targetTime": 62,
+    "pins": [
+      {
+        "id": 1,
+        "x": 400,
+        "y": 300,
+        "angle": 0,
+        "length": 120
+      }
+    ],
+    "chambers": [
+      {
+        "x": 350,
+        "y": 50,
+        "width": 100,
+        "height": 100,
+        "type": "water",
+        "particleCount": 60
+      }
+    ],
+    "monsters": [
+      {
+        "id": 1,
+        "x": 570.383380768895,
+        "y": 250.65857639617332,
+        "type": "blob"
+      }
+    ],
+    "treasure": {
+      "x": 400,
+      "y": 550
+    }
   }
 ]

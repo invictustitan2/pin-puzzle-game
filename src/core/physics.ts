@@ -1,4 +1,4 @@
-import type { Vec2, Particle } from '../types';
+import type { Monster, Particle, Vec2 } from '../types';
 
 export class Physics {
   private readonly gravity: number = 0.5;
@@ -7,6 +7,7 @@ export class Physics {
 
   update(
     particles: Particle[],
+    monsters: Monster[],
     walls: { x: number; y: number; width: number; height: number }[],
     dt: number
   ): void {
@@ -21,8 +22,11 @@ export class Physics {
         // Lava is more viscous, slower falling
         p.vy += this.gravity * 0.3 * dt;
       } else if (p.type === 'steam') {
-        // Steam rises
+        // Steam rises fast
         p.vy -= 0.3 * dt;
+      } else if (p.type === 'gas') {
+        // Gas rises slowly
+        p.vy -= 0.1 * dt;
       }
 
       // Apply velocity
@@ -38,8 +42,8 @@ export class Physics {
         this.handleWallCollision(p, wall);
       }
 
-      // Deactivate steam that goes off screen
-      if (p.type === 'steam' && p.y < -10) {
+      // Deactivate steam/gas that goes off screen
+      if ((p.type === 'steam' || p.type === 'gas') && p.y < -10) {
         p.active = false;
       }
 
@@ -47,6 +51,11 @@ export class Physics {
       if (p.y > 700) {
         p.active = false;
       }
+    }
+
+    // Update monsters
+    if (monsters) {
+      this.updateMonsters(monsters, walls, dt);
     }
 
     // Handle particle-particle interactions
@@ -108,6 +117,55 @@ export class Physics {
     }
   }
 
+  private updateMonsters(
+    monsters: Monster[],
+    walls: { x: number; y: number; width: number; height: number }[],
+    dt: number
+  ): void {
+    for (const m of monsters) {
+      if (!m.active) continue;
+
+      // Gravity
+      m.vy += this.gravity * dt;
+
+      // Move
+      m.x += m.vx * dt;
+      m.y += m.vy * dt;
+
+      // Wall collisions (simplified AABB)
+      for (const wall of walls) {
+        if (
+          m.x > wall.x &&
+          m.x < wall.x + wall.width &&
+          m.y > wall.y &&
+          m.y < wall.y + wall.height
+        ) {
+          // Simple floor collision
+          if (m.y < wall.y + wall.height / 2 && m.vy > 0) {
+            m.y = wall.y;
+            m.vy = 0;
+          } else if (m.y > wall.y + wall.height / 2 && m.vy < 0) {
+            // Ceiling
+            m.y = wall.y + wall.height;
+            m.vy = 0;
+          }
+
+          // Side collisions
+          if (m.x < wall.x + wall.width / 2 && m.vx > 0) {
+            m.x = wall.x;
+            m.vx *= -1;
+          } else if (m.x > wall.x + wall.width / 2 && m.vx < 0) {
+            m.x = wall.x + wall.width;
+            m.vx *= -1;
+          }
+        }
+      }
+
+      // Screen bounds
+      if (m.y > 600) m.active = false;
+    }
+  }
+
   private isWaterLavaInteraction(p1: Particle, p2: Particle): boolean {
     return (
       (p1.type === 'water' && p2.type === 'lava') ||
@@ -136,7 +194,11 @@ export class Physics {
     });
   }
 
-  private handleParticleRepulsion(p1: Particle, p2: Particle, dist: number): void {
+  private handleParticleRepulsion(
+    p1: Particle,
+    p2: Particle,
+    dist: number
+  ): void {
     if (dist > 0) {
       const force = (5 - dist) * 0.1;
       const nx = (p2.x - p1.x) / dist;
@@ -213,5 +275,21 @@ export class Physics {
     radius: number = 15
   ): boolean {
     return this.checkParticleTypeContact(particles, treasure, 'lava', radius);
+  }
+
+  checkMonsterContact(
+    monsters: Monster[],
+    treasure: Vec2,
+    radius: number = 20
+  ): boolean {
+    if (!monsters) return false;
+    for (const m of monsters) {
+      if (m.active) {
+        const dx = m.x - treasure.x;
+        const dy = m.y - treasure.y;
+        if (Math.sqrt(dx * dx + dy * dy) < radius) return true;
+      }
+    }
+    return false;
   }
 }
