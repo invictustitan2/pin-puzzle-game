@@ -1,3 +1,7 @@
+# Level Design Documentation (Legacy)
+
+> **Note**: This guide covers the initial 20 handcrafted levels from Phase 1. For current level creation, please use the **Level Editor** (`/?editor=true`).
+
 # Level Design Documentation
 
 ## Level Progression Philosophy

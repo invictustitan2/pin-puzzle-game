@@ -1,3 +1,7 @@
+# Deployment Guide (Legacy)
+
+> **Note**: This is the legacy deployment guide from Phase 1. For the current Docker/CI-based deployment, please refer to `DEPLOY.md` in the root directory.
+
 # Deployment Guide
 
 ## Quick Deploy to Popular Platforms
