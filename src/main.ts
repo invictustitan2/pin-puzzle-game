@@ -4,17 +4,15 @@ import type { GameState } from './types';
 
 // Get DOM elements
 const canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
-const levelTitle = document.getElementById('level-title') as HTMLElement;
-const levelDescription = document.getElementById(
-  'level-description'
-) as HTMLElement;
-const timeStat = document.getElementById('time-stat') as HTMLElement;
-const resetsStat = document.getElementById('resets-stat') as HTMLElement;
-const pinsStat = document.getElementById('pins-stat') as HTMLElement;
+const levelTitle = document.getElementById('level-title')!;
+const levelDescription = document.getElementById('level-description')!;
+const timeStat = document.getElementById('time-stat')!;
+const resetsStat = document.getElementById('resets-stat')!;
+const pinsStat = document.getElementById('pins-stat')!;
 const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement;
 const nextBtn = document.getElementById('next-btn') as HTMLButtonElement;
 const exportBtn = document.getElementById('export-btn') as HTMLButtonElement;
-const message = document.getElementById('message') as HTMLElement;
+const message = document.getElementById('message')!;
 
 // Initialize game
 const game = new GameEngine(canvas);

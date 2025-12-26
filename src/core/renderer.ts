@@ -1,9 +1,9 @@
 import type { Particle, Pin, Vec2 } from '../types';
 
 export class Renderer {
-  private ctx: CanvasRenderingContext2D;
-  private width: number;
-  private height: number;
+  private readonly ctx: CanvasRenderingContext2D;
+  private readonly width: number;
+  private readonly height: number;
 
   constructor(canvas: HTMLCanvasElement) {
     const ctx = canvas.getContext('2d');

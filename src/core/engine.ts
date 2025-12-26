@@ -11,21 +11,21 @@ import { Renderer } from '../core/renderer';
 import levelsData from '../data/levels.json';
 
 export class GameEngine {
-  private canvas: HTMLCanvasElement;
-  private renderer: Renderer;
-  private physics: Physics;
+  private readonly canvas: HTMLCanvasElement;
+  private readonly renderer: Renderer;
+  private readonly physics: Physics;
   private currentLevel: LevelData;
   private particles: Particle[] = [];
   private pins: Pin[] = [];
   private walls: { x: number; y: number; width: number; height: number }[] = [];
   private treasure: Vec2 = { x: 0, y: 0 };
-  private gameState: GameState;
+  private readonly gameState: GameState;
   private lastTime: number = 0;
   private animationId: number | null = null;
   private levelStartTime: number = 0;
-  private sessions: LevelSession[] = [];
+  private readonly sessions: LevelSession[] = [];
   private currentSession: LevelSession | null = null;
-  private playerId: string;
+  private readonly playerId: string;
 
   // UI callback
   public onStateChange?: (state: GameState) => void;
