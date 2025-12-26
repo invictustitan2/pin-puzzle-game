@@ -1,0 +1,393 @@
+[
+  {
+    "id": 1,
+    "title": "Level 1: First Drop",
+    "description": "Pull the pin to guide the water!",
+    "targetTime": 30,
+    "pins": [
+      { "id": 1, "x": 400, "y": 200, "angle": 1.57, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 350, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 50 },
+      { "x": 350, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 450 }
+  },
+  {
+    "id": 2,
+    "title": "Level 2: Avoid the Lava",
+    "description": "Guide water, but avoid the lava!",
+    "targetTime": 45,
+    "pins": [
+      { "id": 1, "x": 300, "y": 200, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 500, "y": 200, "angle": 1.57, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 50 },
+      { "x": 450, "y": 100, "width": 100, "height": 100, "type": "lava", "particleCount": 50 },
+      { "x": 250, "y": 200, "width": 100, "height": 150, "type": "empty", "particleCount": 0 },
+      { "x": 450, "y": 200, "width": 100, "height": 150, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 300, "y": 500 }
+  },
+  {
+    "id": 3,
+    "title": "Level 3: Water Wins",
+    "description": "Water extinguishes lava! Use it wisely.",
+    "targetTime": 60,
+    "pins": [
+      { "id": 1, "x": 300, "y": 200, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 500, "y": 300, "angle": 1.57, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 80 },
+      { "x": 450, "y": 200, "width": 100, "height": 100, "type": "lava", "particleCount": 40 },
+      { "x": 250, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 300, "width": 200, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 450, "y": 520 }
+  },
+  {
+    "id": 4,
+    "title": "Level 4: Left or Right?",
+    "description": "Choose your path carefully.",
+    "targetTime": 60,
+    "pins": [
+      { "id": 1, "x": 400, "y": 200, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 250, "y": 350, "angle": 0, "length": 100 },
+      { "id": 3, "x": 550, "y": 350, "angle": 3.14, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 350, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 60 },
+      { "x": 200, "y": 300, "width": 100, "height": 100, "type": "lava", "particleCount": 50 },
+      { "x": 500, "y": 300, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 550, "y": 500 }
+  },
+  {
+    "id": 5,
+    "title": "Level 5: The Bridge",
+    "description": "Water can create a safe path.",
+    "targetTime": 75,
+    "pins": [
+      { "id": 1, "x": 250, "y": 200, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 400, "y": 350, "angle": 0, "length": 100 },
+      { "id": 3, "x": 550, "y": 200, "angle": 1.57, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 200, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 70 },
+      { "x": 350, "y": 300, "width": 100, "height": 100, "type": "lava", "particleCount": 60 },
+      { "x": 500, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 40 },
+      { "x": 200, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 500, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 520 }
+  },
+  {
+    "id": 6,
+    "title": "Level 6: Timing Matters",
+    "description": "Pull pins in the right order!",
+    "targetTime": 90,
+    "pins": [
+      { "id": 1, "x": 300, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 2, "x": 500, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 3, "x": 400, "y": 300, "angle": 1.57, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 60 },
+      { "x": 450, "y": 80, "width": 100, "height": 70, "type": "lava", "particleCount": 60 },
+      { "x": 250, "y": 150, "width": 100, "height": 150, "type": "empty", "particleCount": 0 },
+      { "x": 450, "y": 150, "width": 100, "height": 150, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 300, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 500 }
+  },
+  {
+    "id": 7,
+    "title": "Level 7: The Funnel",
+    "description": "Direct the flow through the funnel.",
+    "targetTime": 75,
+    "pins": [
+      { "id": 1, "x": 400, "y": 150, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 350, "y": 300, "angle": 0, "length": 50 },
+      { "id": 3, "x": 450, "y": 300, "angle": 3.14, "length": 50 }
+    ],
+    "chambers": [
+      { "x": 350, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 80 },
+      { "x": 300, "y": 250, "width": 100, "height": 100, "type": "lava", "particleCount": 40 },
+      { "x": 400, "y": 250, "width": 100, "height": 100, "type": "lava", "particleCount": 40 },
+      { "x": 350, "y": 150, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 480 }
+  },
+  {
+    "id": 8,
+    "title": "Level 8: Double Trouble",
+    "description": "Two water sources, one goal.",
+    "targetTime": 90,
+    "pins": [
+      { "id": 1, "x": 250, "y": 200, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 550, "y": 200, "angle": 1.57, "length": 100 },
+      { "id": 3, "x": 400, "y": 350, "angle": 1.57, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 200, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 50 },
+      { "x": 500, "y": 100, "width": 100, "height": 100, "type": "water", "particleCount": 50 },
+      { "x": 350, "y": 300, "width": 100, "height": 80, "type": "lava", "particleCount": 70 },
+      { "x": 200, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 500, "y": 200, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 520 }
+  },
+  {
+    "id": 9,
+    "title": "Level 9: The Maze",
+    "description": "Navigate through the chambers.",
+    "targetTime": 120,
+    "pins": [
+      { "id": 1, "x": 300, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 2, "x": 400, "y": 250, "angle": 0, "length": 80 },
+      { "id": 3, "x": 500, "y": 350, "angle": 1.57, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 70 },
+      { "x": 350, "y": 200, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 250, "y": 150, "width": 100, "height": 80, "type": "empty", "particleCount": 0 },
+      { "x": 400, "y": 250, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 450, "y": 350, "width": 100, "height": 80, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 500, "y": 520 }
+  },
+  {
+    "id": 10,
+    "title": "Level 10: Cascade",
+    "description": "Let the water cascade down.",
+    "targetTime": 100,
+    "pins": [
+      { "id": 1, "x": 350, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 2, "x": 450, "y": 250, "angle": 1.57, "length": 80 },
+      { "id": 3, "x": 550, "y": 350, "angle": 1.57, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 300, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 80 },
+      { "x": 400, "y": 200, "width": 100, "height": 70, "type": "lava", "particleCount": 40 },
+      { "x": 300, "y": 150, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 400, "y": 250, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 500, "y": 350, "width": 100, "height": 80, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 550, "y": 520 }
+  },
+  {
+    "id": 11,
+    "title": "Level 11: The Split",
+    "description": "Divide and conquer the lava.",
+    "targetTime": 120,
+    "pins": [
+      { "id": 1, "x": 400, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 2, "x": 300, "y": 280, "angle": 0.78, "length": 100 },
+      { "id": 3, "x": 500, "y": 280, "angle": 2.36, "length": 100 },
+      { "id": 4, "x": 400, "y": 400, "angle": 1.57, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 350, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 100 },
+      { "x": 250, "y": 250, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 450, "y": 250, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 350, "y": 150, "width": 100, "height": 130, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 400, "width": 100, "height": 80, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 540 }
+  },
+  {
+    "id": 12,
+    "title": "Level 12: The Chamber",
+    "description": "Fill the chamber strategically.",
+    "targetTime": 140,
+    "pins": [
+      { "id": 1, "x": 300, "y": 180, "angle": 1.57, "length": 100 },
+      { "id": 2, "x": 500, "y": 180, "angle": 1.57, "length": 100 },
+      { "id": 3, "x": 350, "y": 350, "angle": 0, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 100, "width": 100, "height": 80, "type": "water", "particleCount": 70 },
+      { "x": 450, "y": 100, "width": 100, "height": 80, "type": "water", "particleCount": 70 },
+      { "x": 300, "y": 300, "width": 100, "height": 100, "type": "lava", "particleCount": 80 },
+      { "x": 250, "y": 180, "width": 100, "height": 120, "type": "empty", "particleCount": 0 },
+      { "x": 450, "y": 180, "width": 100, "height": 120, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 450, "y": 520 }
+  },
+  {
+    "id": 13,
+    "title": "Level 13: Precision Drop",
+    "description": "Precise timing required!",
+    "targetTime": 150,
+    "pins": [
+      { "id": 1, "x": 350, "y": 150, "angle": 1.57, "length": 70 },
+      { "id": 2, "x": 450, "y": 220, "angle": 1.57, "length": 70 },
+      { "id": 3, "x": 350, "y": 300, "angle": 1.57, "length": 70 },
+      { "id": 4, "x": 450, "y": 370, "angle": 1.57, "length": 70 }
+    ],
+    "chambers": [
+      { "x": 300, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 60 },
+      { "x": 400, "y": 150, "width": 100, "height": 70, "type": "lava", "particleCount": 50 },
+      { "x": 300, "y": 220, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 400, "y": 300, "width": 100, "height": 70, "type": "empty", "particleCount": 0 },
+      { "x": 300, "y": 300, "width": 100, "height": 70, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 450, "y": 520 }
+  },
+  {
+    "id": 14,
+    "title": "Level 14: The Gauntlet",
+    "description": "Navigate through multiple obstacles.",
+    "targetTime": 160,
+    "pins": [
+      { "id": 1, "x": 250, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 2, "x": 400, "y": 250, "angle": 1.57, "length": 80 },
+      { "id": 3, "x": 550, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 4, "x": 400, "y": 380, "angle": 1.57, "length": 70 }
+    ],
+    "chambers": [
+      { "x": 200, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 90 },
+      { "x": 350, "y": 200, "width": 100, "height": 70, "type": "lava", "particleCount": 60 },
+      { "x": 500, "y": 80, "width": 100, "height": 70, "type": "lava", "particleCount": 40 },
+      { "x": 200, "y": 150, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 250, "width": 100, "height": 130, "type": "empty", "particleCount": 0 },
+      { "x": 500, "y": 150, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 540 }
+  },
+  {
+    "id": 15,
+    "title": "Level 15: Multi-Step",
+    "description": "Think several steps ahead.",
+    "targetTime": 180,
+    "pins": [
+      { "id": 1, "x": 300, "y": 130, "angle": 1.57, "length": 70 },
+      { "id": 2, "x": 500, "y": 130, "angle": 1.57, "length": 70 },
+      { "id": 3, "x": 350, "y": 250, "angle": 0, "length": 100 },
+      { "id": 4, "x": 400, "y": 350, "angle": 1.57, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 60, "width": 100, "height": 70, "type": "water", "particleCount": 80 },
+      { "x": 450, "y": 60, "width": 100, "height": 70, "type": "lava", "particleCount": 50 },
+      { "x": 300, "y": 200, "width": 100, "height": 80, "type": "lava", "particleCount": 60 },
+      { "x": 250, "y": 130, "width": 100, "height": 70, "type": "empty", "particleCount": 0 },
+      { "x": 450, "y": 130, "width": 100, "height": 70, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 350, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 540 }
+  },
+  {
+    "id": 16,
+    "title": "Level 16: The Reservoir",
+    "description": "Manage the water reservoir carefully.",
+    "targetTime": 170,
+    "pins": [
+      { "id": 1, "x": 350, "y": 180, "angle": 0, "length": 100 },
+      { "id": 2, "x": 450, "y": 180, "angle": 3.14, "length": 100 },
+      { "id": 3, "x": 400, "y": 300, "angle": 1.57, "length": 100 },
+      { "id": 4, "x": 300, "y": 420, "angle": 0, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 300, "y": 100, "width": 200, "height": 80, "type": "water", "particleCount": 120 },
+      { "x": 250, "y": 370, "width": 100, "height": 80, "type": "lava", "particleCount": 70 },
+      { "x": 350, "y": 300, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 300, "y": 420, "width": 100, "height": 80, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 450, "y": 540 }
+  },
+  {
+    "id": 17,
+    "title": "Level 17: Chain Reaction",
+    "description": "One pull triggers everything.",
+    "targetTime": 160,
+    "pins": [
+      { "id": 1, "x": 400, "y": 150, "angle": 1.57, "length": 80 },
+      { "id": 2, "x": 300, "y": 270, "angle": 0, "length": 80 },
+      { "id": 3, "x": 500, "y": 270, "angle": 3.14, "length": 80 },
+      { "id": 4, "x": 400, "y": 380, "angle": 1.57, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 350, "y": 80, "width": 100, "height": 70, "type": "water", "particleCount": 100 },
+      { "x": 250, "y": 220, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 450, "y": 220, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 350, "y": 330, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 350, "y": 150, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 540 }
+  },
+  {
+    "id": 18,
+    "title": "Level 18: The Ultimate Test",
+    "description": "Master level - think carefully!",
+    "targetTime": 200,
+    "pins": [
+      { "id": 1, "x": 250, "y": 130, "angle": 1.57, "length": 70 },
+      { "id": 2, "x": 400, "y": 130, "angle": 1.57, "length": 70 },
+      { "id": 3, "x": 550, "y": 130, "angle": 1.57, "length": 70 },
+      { "id": 4, "x": 325, "y": 280, "angle": 0, "length": 80 },
+      { "id": 5, "x": 475, "y": 280, "angle": 3.14, "length": 80 }
+    ],
+    "chambers": [
+      { "x": 200, "y": 60, "width": 100, "height": 70, "type": "water", "particleCount": 70 },
+      { "x": 350, "y": 60, "width": 100, "height": 70, "type": "water", "particleCount": 70 },
+      { "x": 500, "y": 60, "width": 100, "height": 70, "type": "lava", "particleCount": 40 },
+      { "x": 275, "y": 230, "width": 100, "height": 80, "type": "lava", "particleCount": 60 },
+      { "x": 425, "y": 230, "width": 100, "height": 80, "type": "lava", "particleCount": 60 },
+      { "x": 200, "y": 130, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 130, "width": 100, "height": 100, "type": "empty", "particleCount": 0 },
+      { "x": 500, "y": 130, "width": 100, "height": 100, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 400, "y": 540 }
+  },
+  {
+    "id": 19,
+    "title": "Level 19: Patience",
+    "description": "Wait for the right moment to act.",
+    "targetTime": 210,
+    "pins": [
+      { "id": 1, "x": 350, "y": 120, "angle": 1.57, "length": 60 },
+      { "id": 2, "x": 450, "y": 180, "angle": 1.57, "length": 60 },
+      { "id": 3, "x": 350, "y": 260, "angle": 1.57, "length": 60 },
+      { "id": 4, "x": 450, "y": 320, "angle": 1.57, "length": 60 },
+      { "id": 5, "x": 350, "y": 400, "angle": 1.57, "length": 60 }
+    ],
+    "chambers": [
+      { "x": 300, "y": 60, "width": 100, "height": 60, "type": "water", "particleCount": 80 },
+      { "x": 400, "y": 120, "width": 100, "height": 60, "type": "lava", "particleCount": 50 },
+      { "x": 300, "y": 200, "width": 100, "height": 60, "type": "lava", "particleCount": 50 },
+      { "x": 400, "y": 260, "width": 100, "height": 60, "type": "lava", "particleCount": 50 },
+      { "x": 300, "y": 340, "width": 100, "height": 60, "type": "empty", "particleCount": 0 },
+      { "x": 300, "y": 120, "width": 100, "height": 80, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 350, "y": 540 }
+  },
+  {
+    "id": 20,
+    "title": "Level 20: Grand Finale",
+    "description": "Everything you've learned comes together!",
+    "targetTime": 240,
+    "pins": [
+      { "id": 1, "x": 300, "y": 120, "angle": 1.57, "length": 70 },
+      { "id": 2, "x": 500, "y": 120, "angle": 1.57, "length": 70 },
+      { "id": 3, "x": 250, "y": 240, "angle": 0, "length": 100 },
+      { "id": 4, "x": 550, "y": 240, "angle": 3.14, "length": 100 },
+      { "id": 5, "x": 400, "y": 340, "angle": 1.57, "length": 90 },
+      { "id": 6, "x": 350, "y": 460, "angle": 0, "length": 100 }
+    ],
+    "chambers": [
+      { "x": 250, "y": 50, "width": 100, "height": 70, "type": "water", "particleCount": 80 },
+      { "x": 450, "y": 50, "width": 100, "height": 70, "type": "water", "particleCount": 80 },
+      { "x": 200, "y": 190, "width": 100, "height": 80, "type": "lava", "particleCount": 60 },
+      { "x": 500, "y": 190, "width": 100, "height": 80, "type": "lava", "particleCount": 60 },
+      { "x": 350, "y": 290, "width": 100, "height": 80, "type": "lava", "particleCount": 70 },
+      { "x": 300, "y": 410, "width": 100, "height": 80, "type": "lava", "particleCount": 50 },
+      { "x": 250, "y": 120, "width": 100, "height": 70, "type": "empty", "particleCount": 0 },
+      { "x": 450, "y": 120, "width": 100, "height": 70, "type": "empty", "particleCount": 0 },
+      { "x": 350, "y": 340, "width": 100, "height": 70, "type": "empty", "particleCount": 0 }
+    ],
+    "treasure": { "x": 450, "y": 560 }
+  }
+]
