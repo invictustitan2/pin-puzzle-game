@@ -1,171 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pin Puzzle Game - Phase 1 Demo</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      overflow: hidden;
-    }
-    #app {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      max-width: 100vw;
-      padding: 20px;
-    }
-    #game-canvas {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
-      touch-action: none;
-    }
-    #ui-container {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      min-width: 300px;
-    }
-    .level-info {
-      text-align: center;
-    }
-    .level-info h2 {
-      font-size: 1.5em;
-      color: #333;
-      margin-bottom: 5px;
-    }
-    .level-info p {
-      color: #666;
-      font-size: 0.9em;
-    }
-    .controls {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-    }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      flex: 1;
-    }
-    .btn-primary {
-      background: #667eea;
-      color: white;
-    }
-    .btn-primary:hover {
-      background: #5568d3;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-    }
-    .btn-secondary {
-      background: #f0f0f0;
-      color: #333;
-    }
-    .btn-secondary:hover {
-      background: #e0e0e0;
-      transform: translateY(-2px);
-    }
-    .btn-success {
-      background: #48bb78;
-      color: white;
-    }
-    .btn-success:hover {
-      background: #38a169;
-      transform: translateY(-2px);
-    }
-    .stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
-      text-align: center;
-    }
-    .stat-item {
-      background: #f8f9fa;
-      padding: 10px;
-      border-radius: 6px;
-    }
-    .stat-value {
-      font-size: 1.5em;
-      font-weight: bold;
-      color: #667eea;
-    }
-    .stat-label {
-      font-size: 0.8em;
-      color: #666;
-      margin-top: 4px;
-    }
-    #message {
-      text-align: center;
-      padding: 15px;
-      border-radius: 8px;
-      font-weight: 600;
-      display: none;
-    }
-    #message.success {
-      background: #c6f6d5;
-      color: #22543d;
-      display: block;
-    }
-    #message.failure {
-      background: #fed7d7;
-      color: #742a2a;
-      display: block;
-    }
-  </style>
-</head>
-<body>
-  <div id="app">
-    <canvas id="game-canvas" width="800" height="600"></canvas>
-    <div id="ui-container">
-      <div class="level-info">
-        <h2 id="level-title">Level 1</h2>
-        <p id="level-description">Pull the pin to guide the water!</p>
-      </div>
-      <div id="message"></div>
-      <div class="stats">
-        <div class="stat-item">
-          <div class="stat-value" id="time-stat">0</div>
-          <div class="stat-label">Time (s)</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pin Puzzle Game - Phase 1 Demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+      }
+      #app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        max-width: 100vw;
+        padding: 20px;
+      }
+      #game-canvas {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+        touch-action: none;
+      }
+      #ui-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        min-width: 300px;
+      }
+      .level-info {
+        text-align: center;
+      }
+      .level-info h2 {
+        font-size: 1.5em;
+        color: #333;
+        margin-bottom: 5px;
+      }
+      .level-info p {
+        color: #666;
+        font-size: 0.9em;
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+      }
+      button {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex: 1;
+      }
+      .btn-primary {
+        background: #667eea;
+        color: white;
+      }
+      .btn-primary:hover {
+        background: #5568d3;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+      }
+      .btn-secondary {
+        background: #f0f0f0;
+        color: #333;
+      }
+      .btn-secondary:hover {
+        background: #e0e0e0;
+        transform: translateY(-2px);
+      }
+      .btn-success {
+        background: #48bb78;
+        color: white;
+      }
+      .btn-success:hover {
+        background: #38a169;
+        transform: translateY(-2px);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        text-align: center;
+      }
+      .stat-item {
+        background: #f8f9fa;
+        padding: 10px;
+        border-radius: 6px;
+      }
+      .stat-value {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #667eea;
+      }
+      .stat-label {
+        font-size: 0.8em;
+        color: #666;
+        margin-top: 4px;
+      }
+      #message {
+        text-align: center;
+        padding: 15px;
+        border-radius: 8px;
+        font-weight: 600;
+        display: none;
+      }
+      #message.success {
+        background: #c6f6d5;
+        color: #22543d;
+        display: block;
+      }
+      #message.failure {
+        background: #fed7d7;
+        color: #742a2a;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="game-canvas" width="800" height="600"></canvas>
+      <div id="ui-container">
+        <div class="level-info">
+          <h2 id="level-title">Level 1</h2>
+          <p id="level-description">Pull the pin to guide the water!</p>
         </div>
-        <div class="stat-item">
-          <div class="stat-value" id="resets-stat">0</div>
-          <div class="stat-label">Resets</div>
+        <div id="message"></div>
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-value" id="time-stat">0</div>
+            <div class="stat-label">Time (s)</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="resets-stat">0</div>
+            <div class="stat-label">Resets</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="pins-stat">0</div>
+            <div class="stat-label">Pins Pulled</div>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-value" id="pins-stat">0</div>
-          <div class="stat-label">Pins Pulled</div>
+        <div class="controls">
+          <button id="reset-btn" class="btn-secondary">Reset Level</button>
+          <button id="next-btn" class="btn-primary" style="display: none">
+            Next Level
+          </button>
         </div>
+        <button id="export-btn" class="btn-success">
+          Export Playtest Data
+        </button>
       </div>
-      <div class="controls">
-        <button id="reset-btn" class="btn-secondary">Reset Level</button>
-        <button id="next-btn" class="btn-primary" style="display: none;">Next Level</button>
-      </div>
-      <button id="export-btn" class="btn-success">Export Playtest Data</button>
     </div>
-  </div>
-  <script type="module" src="/src/main.ts"></script>
-</body>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

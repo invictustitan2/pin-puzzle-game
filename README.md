@@ -9,6 +9,7 @@ Pull pins to guide water to treasure while avoiding lava! Water extinguishes lav
 ## 🚀 Quick Start
 
 ### Prerequisites
+
 - Node.js 16+ and npm
 
 ### Installation & Running
@@ -78,6 +79,7 @@ npm run preview
 ## 🏗️ Architecture
 
 ### Technology Stack
+
 - **TypeScript**: Type-safe development
 - **Vite**: Lightning-fast build tool with HMR
 - **Canvas2D**: Rendering for optimal performance
@@ -116,12 +118,14 @@ docs/
 ### Success Criteria (from Protocol)
 
 **Critical Gates (ALL must pass):**
+
 - 90%+ testers complete tutorial unaided
 - Average enjoyment ≥ 7/10
 - 80%+ complete 15+ levels
 - 70%+ would continue playing
 
 **Important Gates (3/4 must pass):**
+
 - 80%+ rate difficulty as "Just Right"
 - Average clarity ≥ 4/5
 - Average physics realism ≥ 3.5/5
@@ -150,12 +154,14 @@ Playtest data exports to JSON with this structure:
 ## 🎯 Design Philosophy
 
 ### Player Experience First
+
 - **Zero friction**: No installation, instant play in browser
 - **Clear feedback**: Immediate visual and gameplay response
 - **Progressive learning**: Tutorial → Easy → Medium → Hard → Master
 - **Satisfying mechanics**: Physics-based interactions feel natural and rewarding
 
 ### Development Principles
+
 - **Rapid iteration**: Vite's HMR enables instant feedback
 - **Data-driven design**: JSON levels for quick balancing
 - **Measurable validation**: Instrumentation for objective assessment
@@ -184,6 +190,7 @@ npm run format
 ```
 
 ### Performance Targets
+
 - Bundle size: < 200 KB (gzipped)
 - Load time: < 2s on 3G
 - Frame rate: 60 FPS on mid-range devices
@@ -208,18 +215,21 @@ Edit `src/data/levels.json`:
 ## 📊 Technical Implementation Highlights
 
 ### Physics Engine
+
 - Gravity simulation with different densities (water vs. lava)
 - Particle-particle collision and repulsion
 - Wall collision detection with damping
 - Water-lava interaction creates steam particles
 
 ### Rendering
+
 - Particle system with type-based rendering
 - Visual feedback for pin hover states
 - Gradient effects for lava glow
 - Win state animations
 
 ### Input Handling
+
 - Mouse and touch support
 - Hover detection for pins
 - Click/tap to pull pins
@@ -240,6 +250,7 @@ MIT
 ## 🙏 Contributing
 
 This is a Phase 1 validation project. Contributions should focus on:
+
 - Bug fixes in core mechanics
 - Playtest feedback and analysis
 - Level balance suggestions

@@ -1,11 +1,13 @@
 # Product Requirements Document: Engine/Stack Decision
 
 ## Executive Summary
+
 This document outlines the technical stack selection for the Pin Puzzle Game, justifying the choice of a custom TypeScript + WebGL implementation over alternative solutions like Unity or Godot.
 
 ## Requirements Analysis
 
 ### Core Requirements
+
 1. **Cross-Platform Support**: Web (primary), mobile web, potential native builds
 2. **Physics Simulation**: Custom fluid dynamics for water/lava with realistic behavior
 3. **Developer Agility**: Rapid iteration and prototyping capabilities
@@ -16,12 +18,15 @@ This document outlines the technical stack selection for the Pin Puzzle Game, ju
 ### Stack Comparison
 
 #### Option 1: Unity
+
 **Pros:**
+
 - Mature physics engine
 - Rich tooling and asset ecosystem
 - Strong mobile support
 
 **Cons:**
+
 - WebGL builds are large (5-10 MB minimum)
 - Licensing concerns for revenue
 - Overkill for 2D puzzle mechanics
@@ -29,19 +34,24 @@ This document outlines the technical stack selection for the Pin Puzzle Game, ju
 - Requires engine-specific knowledge
 
 #### Option 2: Godot
+
 **Pros:**
+
 - Open source and free
 - Good 2D support
 - Lighter WebGL exports than Unity
 
 **Cons:**
+
 - Less mature web export
 - Smaller community/resources
 - Custom shaders needed for fluid effects
 - Still overhead for simple 2D puzzle
 
 #### Option 3: Custom TypeScript + WebGL/Canvas (RECOMMENDED)
+
 **Pros:**
+
 - **Zero installation barrier**: Instant play in any browser
 - **Minimal bundle size**: ~100-200 KB vs 5+ MB
 - **Maximum agility**: Instant hot-reload development
@@ -54,6 +64,7 @@ This document outlines the technical stack selection for the Pin Puzzle Game, ju
 - **Future-proof**: Progressive Web App capabilities
 
 **Cons:**
+
 - Custom physics implementation required
 - No built-in editor (use JSON for levels)
 - Need to build own tooling
@@ -73,21 +84,25 @@ This document outlines the technical stack selection for the Pin Puzzle Game, ju
 ### Technology Stack
 
 #### Core Technologies
+
 - **TypeScript**: Type-safe development
 - **Vite**: Build tool with HMR (Hot Module Replacement)
 - **Canvas2D/WebGL**: Rendering (Canvas2D for simplicity, WebGL if needed)
 
 #### Libraries
+
 - **Custom Physics**: Lightweight 2D physics for pins, water particles, lava viscosity
 - **Particle System**: For water droplets, steam effects
 - **Audio**: Web Audio API for SFX
 
 #### Development Tools
+
 - **ESLint**: Code quality
 - **Prettier**: Code formatting
 - **Jest**: Unit testing (if needed)
 
 #### Hosting
+
 - **Netlify/Vercel**: Free tier with instant deployments
 - **GitHub Pages**: Alternative zero-cost option
 
@@ -137,6 +152,7 @@ src/
 ## Conclusion
 
 A custom TypeScript + WebGL/Canvas2D stack optimally balances all requirements:
+
 - **UX**: Instant web access, fast loads, smooth performance
 - **Cross-platform**: Works everywhere with a browser
 - **Security**: Standard web security model
