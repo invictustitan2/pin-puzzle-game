@@ -7,33 +7,33 @@
     "pins": [
       {
         "id": 1,
-        "x": 400,
+        "x": 325,
         "y": 200,
-        "angle": 1.57,
-        "length": 100
+        "angle": 0,
+        "length": 150
       }
     ],
     "chambers": [
       {
-        "x": 350,
+        "x": 325,
         "y": 100,
-        "width": 100,
+        "width": 150,
         "height": 100,
         "type": "water",
-        "particleCount": 50
+        "particleCount": 80
       },
       {
-        "x": 350,
+        "x": 325,
         "y": 200,
-        "width": 100,
-        "height": 100,
+        "width": 150,
+        "height": 350,
         "type": "empty",
         "particleCount": 0
       }
     ],
     "treasure": {
       "x": 400,
-      "y": 450
+      "y": 500
     }
   },
   {

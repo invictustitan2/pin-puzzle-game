@@ -1,5 +1,6 @@
+import { AssetManager } from '../core/AssetManager'; // Import AssetManager
 import { HintManager } from '../core/hint-manager';
-import { Physics } from '../core/physics';
+import { PhysicsWorld } from '../core/PhysicsWorld'; // Changed from Physics to PhysicsWorld
 import { ProgressManager } from '../core/progress-manager';
 import { Renderer, VisualEffect } from '../core/renderer';
 import levelsData from '../data/levels.json';
@@ -16,7 +17,8 @@ import type {
 export class GameEngine {
   private readonly canvas: HTMLCanvasElement;
   private readonly renderer: Renderer;
-  private readonly physics: Physics;
+  private readonly assetManager: AssetManager; // Add AssetManager
+  private physics: PhysicsWorld; // Changed type to PhysicsWorld
   private currentLevel: LevelData;
   private particles: Particle[] = [];
   private monsters: Monster[] = [];
@@ -44,8 +46,10 @@ export class GameEngine {
 
   constructor(canvas: HTMLCanvasElement) {
     this.canvas = canvas;
-    this.renderer = new Renderer(canvas);
-    this.physics = new Physics();
+    this.assetManager = new AssetManager();
+    this.assetManager.loadAll(); // Start loading
+    this.renderer = new Renderer(canvas, this.assetManager);
+    this.physics = new PhysicsWorld(); // Instantiated PhysicsWorld
     this.hintManager = new HintManager();
     this.progressManager = new ProgressManager();
     this.currentLevel = levelsData[0] as LevelData;
@@ -66,26 +70,19 @@ export class GameEngine {
 
   private setupLevel(levelData: LevelData): void {
     this.currentLevel = levelData;
+    this.physics.clear(); // Clear physics world for new level
+
+    // Reset local arrays
     this.particles = [];
     this.monsters = [];
     this.pins = [];
     this.walls = [];
 
-    // Setup pins
-    for (const pinData of levelData.pins) {
-      this.pins.push({
-        id: pinData.id,
-        x: pinData.x,
-        y: pinData.y,
-        angle: pinData.angle,
-        length: pinData.length,
-        pulled: false,
-        hover: false,
-      });
-    }
+    // Generate boundary walls based on adjacency
+    const wallThickness = 20;
 
-    // Setup chambers and particles
     for (const chamber of levelData.chambers) {
+      // Add visual wall (chamber background)
       this.walls.push({
         x: chamber.x,
         y: chamber.y,
@@ -93,26 +90,110 @@ export class GameEngine {
         height: chamber.height,
       });
 
+      // 1. Top Wall
+      // Check if there's a chamber directly above
+      const hasTopNeighbor = levelData.chambers.some(
+        (c) =>
+          Math.abs(c.x - chamber.x) < 1 && // Same X column (approx) - ignoring complex overlaps for now
+          Math.abs(c.y + c.height - chamber.y) < 5 && // Ends where we start
+          c.width === chamber.width // Assuming same width logic for simplicity of "pipe"
+      );
+
+      if (!hasTopNeighbor) {
+        this.physics.addWall(
+          chamber.x - wallThickness,
+          chamber.y - wallThickness,
+          chamber.width + 2 * wallThickness,
+          wallThickness
+        );
+      }
+
+      // 2. Bottom Wall
+      const hasBottomNeighbor = levelData.chambers.some(
+        (c) =>
+          Math.abs(c.x - chamber.x) < 1 &&
+          Math.abs(c.y - (chamber.y + chamber.height)) < 5 &&
+          c.width === chamber.width
+      );
+
+      if (!hasBottomNeighbor) {
+        this.physics.addWall(
+          chamber.x - wallThickness,
+          chamber.y + chamber.height,
+          chamber.width + 2 * wallThickness,
+          wallThickness
+        );
+      }
+
+      // 3. Left Wall
+      const hasLeftNeighbor = levelData.chambers.some(
+        (c) =>
+          Math.abs(c.x + c.width - chamber.x) < 5 &&
+          c.y === chamber.y && // Matches Y for horizontal pipe
+          c.height === chamber.height
+      );
+
+      // Checking for arbitrary overlaps is hard.
+      // Simplified: explicit adjacency for same-height/width blocks.
+      // Ideally we'd use a more robust geometry union, but this fits the "grid-like" levels.
+
+      if (!hasLeftNeighbor) {
+        this.physics.addWall(
+          chamber.x - wallThickness,
+          chamber.y,
+          wallThickness,
+          chamber.height
+        );
+      }
+
+      // 4. Right Wall
+      const hasRightNeighbor = levelData.chambers.some(
+        (c) =>
+          Math.abs(c.x - (chamber.x + chamber.width)) < 5 &&
+          c.y === chamber.y &&
+          c.height === chamber.height
+      );
+
+      if (!hasRightNeighbor) {
+        this.physics.addWall(
+          chamber.x + chamber.width,
+          chamber.y,
+          wallThickness,
+          chamber.height
+        );
+      }
+
       // Create particles if chamber has content
       if (chamber.type !== 'empty') {
-        for (let i = 0; i < chamber.particleCount; i++) {
-          this.particles.push({
-            x: chamber.x + Math.random() * chamber.width,
-            y: chamber.y + Math.random() * chamber.height,
-            vx: (Math.random() - 0.5) * 0.5,
-            vy: (Math.random() - 0.5) * 0.5,
-            type: chamber.type,
-            active: true,
-            mass: chamber.type === 'lava' ? 1.2 : 1.0,
-          });
-        }
+        // Spawn slightly randomized to avoid stacking perfect columns if physics is sleepy
+        this.spawnParticles(
+          chamber.particleCount,
+          chamber.x + chamber.width / 2,
+          chamber.y + chamber.height / 2,
+          chamber.type
+        );
       }
+    }
+
+    // Setup pins
+    for (const pinData of levelData.pins) {
+      const pin: Pin = {
+        id: pinData.id,
+        x: pinData.x,
+        y: pinData.y,
+        angle: pinData.angle,
+        length: pinData.length,
+        pulled: false,
+        hover: false,
+      };
+      this.pins.push(pin);
+      this.physics.addPin(pin); // Add pin to physics world
     }
 
     // Setup monsters
     if (levelData.monsters) {
       for (const mData of levelData.monsters) {
-        this.monsters.push({
+        const monster: Monster = {
           id: mData.id,
           x: mData.x,
           y: mData.y,
@@ -120,12 +201,15 @@ export class GameEngine {
           vy: 0,
           type: mData.type,
           active: true,
-        });
+        };
+        this.monsters.push(monster);
+        this.physics.addMonster(monster); // Add monster to physics world
       }
     }
 
     // Setup treasure
     this.treasure = levelData.treasure;
+    this.physics.setTreasure(this.treasure); // Set treasure in physics world
 
     // Reset game state
     this.levelStartTime = Date.now();
@@ -143,6 +227,33 @@ export class GameEngine {
     };
 
     this.hintManager.resetLevel();
+  }
+
+  private spawnParticles(
+    count: number,
+    x: number,
+    y: number,
+    type: 'water' | 'lava' | 'gas' | 'steam'
+  ): void {
+    console.log(
+      `[GameEngine] Spawning ${count} particles of type ${type} at (${x}, ${y})`
+    );
+    for (let i = 0; i < count; i++) {
+      const particle: Particle = {
+        x: x + (Math.random() - 0.5) * 20,
+        y: y + (Math.random() - 0.5) * 20,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        type,
+        active: true,
+        mass: 1, // Matter handles mass
+      };
+      // ID is index
+      const id = this.particles.length;
+      this.particles.push(particle);
+      this.physics.addParticle(id, particle.x, particle.y, type);
+    }
+    console.log(`[GameEngine] Total particles: ${this.particles.length}`);
   }
 
   private setupInputHandlers(): void {
@@ -170,9 +281,11 @@ export class GameEngine {
 
   private getMousePos(e: MouseEvent): Vec2 {
     const rect = this.canvas.getBoundingClientRect();
+    const scaleX = this.canvas.width / rect.width;
+    const scaleY = this.canvas.height / rect.height;
     return {
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY,
     };
   }
 
@@ -194,96 +307,58 @@ export class GameEngine {
     if (this.gameState.gameStatus !== 'playing') return;
 
     const pos = this.getMousePos(e);
+    const x = pos.x;
+    const y = pos.y;
 
-    for (const pin of this.pins) {
-      if (pin.pulled) continue;
+    console.log(`[GameEngine] Click at (${x}, ${y})`);
 
-      const dx = pos.x - pin.x;
-      const dy = pos.y - pin.y;
-      const dist = Math.sqrt(dx * dx + dy * dy);
+    // Check pin click
+    const pinIndex = this.pins.findIndex((p) => {
+      if (p.pulled) return false;
 
-      if (dist < 15) {
-        this.pullPin(pin);
-        break;
+      // Rotated check would be better, but circle check ok for now
+      const dx = p.x - x;
+      const dy = p.y - y;
+      const distSq = dx * dx + dy * dy;
+      console.log(
+        `[GameEngine] Checking Pin ${p.id} at (${p.x}, ${p.y}). Dist: ${Math.sqrt(distSq)}`
+      );
+
+      return distSq < 1600; // 40px radius
+    });
+
+    if (pinIndex !== -1) {
+      console.log(`[GameEngine] Pin ${this.pins[pinIndex].id} clicked!`);
+      const pin = this.pins[pinIndex];
+
+      pin.pulled = true;
+      this.physics.removePin(pin.id); // Remove physical body
+
+      this.gameState.pinsPulled++; // Use gameState
+      if (this.onAudioEvent) this.onAudioEvent('pull'); // Use onAudioEvent
+
+      // Track pin pull in session
+      if (this.currentSession) {
+        this.currentSession.pinPullSequence.push(pin.id);
       }
+
+      this.notifyStateChange();
+
+      // Add sparkle effect at pin head
+      this.effects.push({
+        x: pin.x,
+        y: pin.y,
+        type: 'sparkle',
+        age: 0,
+        maxAge: 20,
+      });
     }
 
     // Reset idle timer on interaction
     this.hintManager.recordAction();
   }
 
-  private pullPin(pin: Pin): void {
-    pin.pulled = true;
-    this.gameState.pinsPulled++;
-
-    // Track pin pull in session
-    if (this.currentSession) {
-      this.currentSession.pinPullSequence.push(pin.id);
-    }
-
-    // Remove wall associated with this pin
-    // The wall is removed by finding chambers that this pin was blocking
-    for (let i = this.walls.length - 1; i >= 0; i--) {
-      const wall = this.walls[i];
-
-      // Check if pin intersects this wall's boundary
-      if (this.pinIntersectsWall(pin, wall)) {
-        this.walls.splice(i, 1);
-        break;
-      }
-    }
-
-    this.notifyStateChange();
-
-    // Trigger effects
-    if (this.onAudioEvent) this.onAudioEvent('pull');
-
-    // Add sparkle effect at pin head
-    this.effects.push({
-      x: pin.x,
-      y: pin.y,
-      type: 'sparkle',
-      age: 0,
-      maxAge: 20,
-    });
-  }
-
-  private pinIntersectsWall(
-    pin: Pin,
-    wall: { x: number; y: number; width: number; height: number }
-  ): boolean {
-    // Check if pin crosses any edge of the wall
-    // Simplified: check if pin endpoints are on different sides of wall boundaries
-    const tolerance = 5;
-
-    // Check horizontal walls (top and bottom)
-    if (
-      Math.abs(pin.y - wall.y) < tolerance ||
-      Math.abs(pin.y - (wall.y + wall.height)) < tolerance
-    ) {
-      if (
-        pin.x >= wall.x - tolerance &&
-        pin.x <= wall.x + wall.width + tolerance
-      ) {
-        return true;
-      }
-    }
-
-    // Check vertical walls (left and right)
-    if (
-      Math.abs(pin.x - wall.x) < tolerance ||
-      Math.abs(pin.x - (wall.x + wall.width)) < tolerance
-    ) {
-      if (
-        pin.y >= wall.y - tolerance &&
-        pin.y <= wall.y + wall.height + tolerance
-      ) {
-        return true;
-      }
-    }
-
-    return false;
-  }
+  // Removed unused pullPin and pinIntersectsWall methods
 
   public start(): void {
     this.lastTime = performance.now();
@@ -311,7 +386,60 @@ export class GameEngine {
     if (this.gameState.gameStatus !== 'playing') return;
 
     // Update physics
-    this.physics.update(this.particles, this.monsters, this.walls, dt);
+    this.physics.update(dt);
+
+    // Sync PhysicsWorld bodies to renderer particles
+    // Note: This is an expensive loop if we have many particles.
+    // Optimization: Only update active particles? Matter.js handles active state.
+    // For now, iterate our logical particles and fetch pos from physics.
+    // Assuming this.state.isPlaying is equivalent to this.gameState.gameStatus === 'playing'
+    // Sync positions back
+    if (this.gameState.gameStatus === 'playing') {
+      // Handle Fluid Collisions
+      const steamPoints = this.physics.getAndClearFluidCollisions();
+      for (const point of steamPoints) {
+        // Spawn steam effect
+        this.effects.push({
+          x: point.x,
+          y: point.y,
+          type: 'steam',
+          age: 0,
+          maxAge: 40, // Longer life for steam
+        });
+        if (this.onAudioEvent) this.onAudioEvent('steam');
+      }
+
+      // Sync positions
+      for (let i = 0; i < this.particles.length; i++) {
+        const p = this.particles[i];
+        if (!p.active) continue;
+
+        const pos = this.physics.getParticlePosition(i);
+        if (pos) {
+          p.x = pos.x;
+          p.y = pos.y;
+
+          // Check bounds (Matter handles this usually, but for cleanup)
+          if (p.y > this.canvas.height + 50) {
+            p.active = false;
+            this.physics.removeParticle(i); // Remove from physics world
+          }
+        } else {
+          // Body removed (e.g. by collision)
+          p.active = false;
+        }
+      }
+
+      // Sync monster positions
+      for (const monster of this.monsters) {
+        if (!monster.active) continue;
+        const pos = this.physics.getMonsterPosition(monster.id);
+        if (pos) {
+          monster.x = pos.x;
+          monster.y = pos.y;
+        }
+      }
+    }
 
     // Check win condition (water reaches treasure)
     if (this.physics.checkTreasureContact(this.particles, this.treasure)) {
@@ -434,6 +562,15 @@ export class GameEngine {
       this.currentLevel = levelsData[index] as LevelData;
       this.setupLevel(this.currentLevel);
       this.notifyStateChange();
+    }
+  }
+
+  public loadLevel(levelId: number): void {
+    const index = levelsData.findIndex((l) => l.id === levelId);
+    if (index !== -1) {
+      this.loadLevelIndex(index);
+    } else {
+      console.warn(`Level with ID ${levelId} not found.`);
     }
   }
 
