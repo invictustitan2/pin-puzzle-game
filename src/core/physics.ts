@@ -5,7 +5,11 @@ export class Physics {
   private damping: number = 0.98;
   private collisionDamping: number = 0.7;
 
-  update(particles: Particle[], walls: { x: number; y: number; width: number; height: number }[], dt: number): void {
+  update(
+    particles: Particle[],
+    walls: { x: number; y: number; width: number; height: number }[],
+    dt: number
+  ): void {
     // Update particle physics
     for (const p of particles) {
       if (!p.active) continue;
@@ -49,11 +53,17 @@ export class Physics {
     this.handleParticleInteractions(particles);
   }
 
-  private handleWallCollision(p: Particle, wall: { x: number; y: number; width: number; height: number }): void {
+  private handleWallCollision(
+    p: Particle,
+    wall: { x: number; y: number; width: number; height: number }
+  ): void {
     const margin = 3;
-    
+
     // Bottom collision
-    if (p.y + margin > wall.y + wall.height && p.y - margin < wall.y + wall.height) {
+    if (
+      p.y + margin > wall.y + wall.height &&
+      p.y - margin < wall.y + wall.height
+    ) {
       if (p.x > wall.x && p.x < wall.x + wall.width) {
         p.y = wall.y + wall.height - margin;
         p.vy = -Math.abs(p.vy) * this.collisionDamping;
@@ -77,7 +87,10 @@ export class Physics {
     }
 
     // Right collision
-    if (p.x + margin > wall.x + wall.width && p.x - margin < wall.x + wall.width) {
+    if (
+      p.x + margin > wall.x + wall.width &&
+      p.x - margin < wall.x + wall.width
+    ) {
       if (p.y > wall.y && p.y < wall.y + wall.height) {
         p.x = wall.x + wall.width - margin;
         p.vx = -Math.abs(p.vx) * this.collisionDamping;
@@ -96,9 +109,10 @@ export class Physics {
         if (!p2.active) continue;
 
         // Check for water-lava collision
-        if ((p1.type === 'water' && p2.type === 'lava') || 
-            (p1.type === 'lava' && p2.type === 'water')) {
-          
+        if (
+          (p1.type === 'water' && p2.type === 'lava') ||
+          (p1.type === 'lava' && p2.type === 'water')
+        ) {
           const dx = p2.x - p1.x;
           const dy = p2.y - p1.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -116,13 +130,16 @@ export class Physics {
               vy: -2 - Math.random(),
               type: 'steam',
               active: true,
-              mass: 0.5
+              mass: 0.5,
             });
           }
         }
 
         // Simple particle repulsion for water-water and lava-lava
-        if (p1.type === p2.type && (p1.type === 'water' || p1.type === 'lava')) {
+        if (
+          p1.type === p2.type &&
+          (p1.type === 'water' || p1.type === 'lava')
+        ) {
           const dx = p2.x - p1.x;
           const dy = p2.y - p1.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -142,7 +159,11 @@ export class Physics {
     }
   }
 
-  checkTreasureContact(particles: Particle[], treasure: Vec2, radius: number = 15): boolean {
+  checkTreasureContact(
+    particles: Particle[],
+    treasure: Vec2,
+    radius: number = 15
+  ): boolean {
     // Check if any water particle touches the treasure
     for (const p of particles) {
       if (p.active && p.type === 'water') {
@@ -157,7 +178,11 @@ export class Physics {
     return false;
   }
 
-  checkLavaContact(particles: Particle[], treasure: Vec2, radius: number = 15): boolean {
+  checkLavaContact(
+    particles: Particle[],
+    treasure: Vec2,
+    radius: number = 15
+  ): boolean {
     // Check if any lava particle touches the treasure
     for (const p of particles) {
       if (p.active && p.type === 'lava') {

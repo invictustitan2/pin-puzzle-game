@@ -8,7 +8,7 @@ export class Renderer {
   constructor(canvas: HTMLCanvasElement) {
     const ctx = canvas.getContext('2d');
     if (!ctx) throw new Error('Could not get 2D context');
-    
+
     this.ctx = ctx;
     this.width = canvas.width;
     this.height = canvas.height;
@@ -67,13 +67,20 @@ export class Renderer {
       if (!p.active) continue;
 
       this.ctx.beginPath();
-      
+
       if (p.type === 'water') {
         this.ctx.fillStyle = 'rgba(66, 153, 225, 0.8)';
         this.ctx.arc(p.x, p.y, 3, 0, Math.PI * 2);
       } else if (p.type === 'lava') {
         // Lava with glow effect
-        const gradient = this.ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 4);
+        const gradient = this.ctx.createRadialGradient(
+          p.x,
+          p.y,
+          0,
+          p.x,
+          p.y,
+          4
+        );
         gradient.addColorStop(0, 'rgba(255, 100, 50, 0.9)');
         gradient.addColorStop(1, 'rgba(200, 50, 0, 0.8)');
         this.ctx.fillStyle = gradient;
@@ -82,7 +89,7 @@ export class Renderer {
         this.ctx.fillStyle = 'rgba(200, 200, 200, 0.5)';
         this.ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
       }
-      
+
       this.ctx.fill();
     }
   }
@@ -90,10 +97,17 @@ export class Renderer {
   drawTreasure(treasure: Vec2, isWon: boolean = false): void {
     // Draw treasure chest
     const size = 30;
-    
+
     if (isWon) {
       // Draw glow effect when won
-      const gradient = this.ctx.createRadialGradient(treasure.x, treasure.y, 0, treasure.x, treasure.y, size);
+      const gradient = this.ctx.createRadialGradient(
+        treasure.x,
+        treasure.y,
+        0,
+        treasure.x,
+        treasure.y,
+        size
+      );
       gradient.addColorStop(0, 'rgba(72, 187, 120, 0.5)');
       gradient.addColorStop(1, 'rgba(72, 187, 120, 0)');
       this.ctx.fillStyle = gradient;
@@ -104,14 +118,19 @@ export class Renderer {
 
     // Draw chest base
     this.ctx.fillStyle = '#d69e2e';
-    this.ctx.fillRect(treasure.x - size/2, treasure.y - size/4, size, size/2);
+    this.ctx.fillRect(
+      treasure.x - size / 2,
+      treasure.y - size / 4,
+      size,
+      size / 2
+    );
 
     // Draw chest lid
     this.ctx.fillStyle = '#b7791f';
     this.ctx.beginPath();
-    this.ctx.moveTo(treasure.x - size/2, treasure.y - size/4);
-    this.ctx.lineTo(treasure.x, treasure.y - size/2);
-    this.ctx.lineTo(treasure.x + size/2, treasure.y - size/4);
+    this.ctx.moveTo(treasure.x - size / 2, treasure.y - size / 4);
+    this.ctx.lineTo(treasure.x, treasure.y - size / 2);
+    this.ctx.lineTo(treasure.x + size / 2, treasure.y - size / 4);
     this.ctx.fill();
 
     // Draw lock
@@ -125,11 +144,11 @@ export class Renderer {
     this.ctx.font = 'bold 36px Arial';
     this.ctx.textAlign = 'center';
     this.ctx.textBaseline = 'middle';
-    
+
     // Draw shadow
     this.ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
     this.ctx.fillText(message, this.width / 2 + 2, y + 2);
-    
+
     // Draw text
     this.ctx.fillStyle = '#2d3748';
     this.ctx.fillText(message, this.width / 2, y);

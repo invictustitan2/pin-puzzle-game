@@ -5,7 +5,9 @@ import type { GameState } from './types';
 // Get DOM elements
 const canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
 const levelTitle = document.getElementById('level-title') as HTMLElement;
-const levelDescription = document.getElementById('level-description') as HTMLElement;
+const levelDescription = document.getElementById(
+  'level-description'
+) as HTMLElement;
 const timeStat = document.getElementById('time-stat') as HTMLElement;
 const resetsStat = document.getElementById('resets-stat') as HTMLElement;
 const pinsStat = document.getElementById('pins-stat') as HTMLElement;
@@ -25,12 +27,12 @@ game.onStateChange = (state: GameState) => {
 // Update UI function
 function updateUI(state: GameState): void {
   const level = game.getCurrentLevel();
-  
+
   levelTitle.textContent = level.title;
   levelDescription.textContent = level.description;
   resetsStat.textContent = state.resets.toString();
   pinsStat.textContent = state.pinsPulled.toString();
-  
+
   if (state.gameStatus === 'won') {
     message.textContent = '🎉 Level Complete! Great job!';
     message.className = 'success';
@@ -69,7 +71,7 @@ exportBtn.addEventListener('click', () => {
   a.download = `playtest-data-${Date.now()}.json`;
   a.click();
   URL.revokeObjectURL(url);
-  
+
   alert('Playtest data exported! Thank you for testing.');
 });
 
