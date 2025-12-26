@@ -225,6 +225,6 @@ All deliverables implemented, tested, and documented.
 
 ---
 
-**Verified by:** ********\_********
-**Date:** ********\_********
-**Signature:** ********\_********
+**Verified by:** **\*\*\*\***\_**\*\*\*\***
+**Date:** **\*\*\*\***\_**\*\*\*\***
+**Signature:** **\*\*\*\***\_**\*\*\*\***
